@@ -4,16 +4,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Connection;
+import java.util.ArrayList;
 
-import DBUtil.GoogleCon
-import Domein.Student
+import DBUtil.GoogleCon;
+import domein.Student;
 
 public class StudentDao
 {
 	public void CreateStudent(Student s){
 		Connection conn = null;
 		try{
-			conn=DBUtil.getConnection();
+			conn=GoogleCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("Insert into Student(studentcode, school,lesjaar,niveau,postcode,geslacht,gemCijfer,isBlijvenZitten)values(?,?,?,?,?,?,?,?)");
 			pStmt.setString(1, s.getCode());
 			pStmt.setString(2, s.getSchool());
@@ -27,14 +28,14 @@ public class StudentDao
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally{
-			DBUtil.closeConnection(conn);
+			GoogleCon.closeConnection(conn);
 		}
 	}
 		public ArrayList<Student> getStudenten(){
 		Connection conn = null;
 		ArrayList<Student> Studenten = new ArrayList<Student>();		
 		try {
-			conn = DBUtil.getConnection();
+			conn = GoogleCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("select * from student");
 			ResultSet rSet = pStmt.executeQuery();
 			while(rSet.next()) {
@@ -53,7 +54,7 @@ public class StudentDao
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtil.closeConnection(conn);
+			GoogleCon.closeConnection(conn);
 		}
 		return Studenten;
 	
@@ -63,7 +64,7 @@ public class StudentDao
 		Connection conn = null;
 		ArrayList<Student> Studenten = new ArrayList<Student>();		
 		try {
-			conn = DBUtil.getConnection();
+			conn = GoogleCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("select * from student where geslacht = '?'");
 			pStmt.setString(1, ges);
 			ResultSet rSet = pStmt.executeQuery();
@@ -83,7 +84,7 @@ public class StudentDao
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtil.closeConnection(conn);
+			GoogleCon.closeConnection(conn);
 		}
 		return Studenten;
 	
@@ -93,7 +94,7 @@ public class StudentDao
 		Connection conn = null;
 		ArrayList<Student> Studenten = new ArrayList<Student>();		
 		try {
-			conn = DBUtil.getConnection();
+			conn = GoogleCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("select * from student where niveau = '?'");
 			pStmt.setString(1, niv);
 			ResultSet rSet = pStmt.executeQuery();
@@ -113,7 +114,7 @@ public class StudentDao
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtil.closeConnection(conn);
+			GoogleCon.closeConnection(conn);
 		}
 		return Studenten;
 	
@@ -123,7 +124,7 @@ public class StudentDao
 		Connection conn = null;
 		ArrayList<Student> Studenten = new ArrayList<Student>();		
 		try {
-			conn = DBUtil.getConnection();
+			conn = GoogleCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("select * from student where lesjaar = '?'");
 			pStmt.setString(1, jaar);
 			ResultSet rSet = pStmt.executeQuery();
@@ -143,7 +144,7 @@ public class StudentDao
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtil.closeConnection(conn);
+			GoogleCon.closeConnection(conn);
 		}
 		return Studenten;
 	
@@ -153,7 +154,7 @@ public class StudentDao
 		Connection conn = null;
 		ArrayList<Student> Studenten = new ArrayList<Student>();		
 		try {
-			conn = DBUtil.getConnection();
+			conn = GoogleCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("select * from student where studentcode = '?'");
 			pStmt.setString(1, code);
 			ResultSet rSet = pStmt.executeQuery();
@@ -173,7 +174,7 @@ public class StudentDao
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
-			DBUtil.closeConnection(conn);
+			GoogleCon.closeConnection(conn);
 		}
 		return Studenten;
 	

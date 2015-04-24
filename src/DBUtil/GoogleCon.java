@@ -2,7 +2,7 @@ package DBUtil;
 
 import java.sql.*;
 
-public class DBUtil {
+public class GoogleCon {
 	private static Connection conn=null;
 	private static String username = "root";
 	private static String passwd = "root";
