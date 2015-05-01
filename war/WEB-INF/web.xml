@@ -6,10 +6,34 @@
 	version="2.4">
 
 	<servlet>
-		<servlet-name>login servlet</servlet-name>
-		<servlet-class>nl.hu.sp.lesson1.dynamicexample.LogServlet
+		<servlet-name>login docent servlet</servlet-name>
+		<servlet-class>servlets.LoginDocentBeheerderServlet
 		</servlet-class>
 	</servlet>
-
+	
+	<servlet>
+		<servlet-name>login student servlet</servlet-name>
+		<servlet-class>servlets.LoginStudentServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>toets servlet</servlet-name>
+		<servlet-class>servlets.ToetsServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>vragen aanmaken servlet</servlet-name>
+		<servlet-class>servlets.VragenAanmakenServlet</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>vragen bewerken servlet</servlet-name>
+		<servlet-class>servlets.VragenBewerkenServlet</servlet-class>	
+	</servlet>
+	
+	<servlet>
+		<servlet-name>vragen overzicht servlet</servlet-name>
+		<servlet-class>servlets.VragenBewerkenServlet</servlet-class>
+	</servlet>
 
 </web-app> 
