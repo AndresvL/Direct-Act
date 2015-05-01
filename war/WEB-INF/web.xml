@@ -35,5 +35,9 @@
 		<servlet-name>vragen overzicht servlet</servlet-name>
 		<servlet-class>servlets.VragenBewerkenServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>enquette servlet</servlet-name>
+		<servlet-class>servlets.EnquetteServlet</servlet-class>
+	</servlet>
 
 </web-app> 

@@ -23,7 +23,7 @@ public class StudentDao
 			pStmt.setString(5, s.getPostcode());
 			pStmt.setString(6, s.getGeslacht());
 			pStmt.setString(7, s.getGemCijfer());
-			pStmt.setString(8, s.getBlijvenZitten());
+			pStmt.setString(8, s.getIsBlijvenZitten());
 			pStmt.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -47,7 +47,7 @@ public class StudentDao
 				s.setPostcode(rSet.getString("postcode"));
 				s.setGeslacht(rSet.getString("geslacht"));
 				s.setGemCijfer(rSet.getString("gemCijfer"));
-				s.setBlijvenzitten(rSet.getString("isBlijvenZitten"));
+				s.setIsBlijvenZitten(rSet.getString("isBlijvenZitten"));
 				Studenten.add(s);
 			}
 			pStmt.executeUpdate();
@@ -77,7 +77,7 @@ public class StudentDao
 				s.setPostcode(rSet.getString("postcode"));
 				s.setGeslacht(rSet.getString("geslacht"));
 				s.setGemCijfer(rSet.getString("gemCijfer"));
-				s.setBlijvenzitten(rSet.getString("isBlijvenZitten"));
+				s.setIsBlijvenZitten(rSet.getString("isBlijvenZitten"));
 				Studenten.add(s);
 			}
 			pStmt.executeUpdate();
@@ -107,7 +107,7 @@ public class StudentDao
 				s.setPostcode(rSet.getString("postcode"));
 				s.setGeslacht(rSet.getString("geslacht"));
 				s.setGemCijfer(rSet.getString("gemCijfer"));
-				s.setBlijvenzitten(rSet.getString("isBlijvenZitten"));
+				s.setIsBlijvenZitten(rSet.getString("isBlijvenZitten"));
 				Studenten.add(s);
 			}
 			pStmt.executeUpdate();
@@ -137,7 +137,7 @@ public class StudentDao
 				s.setPostcode(rSet.getString("postcode"));
 				s.setGeslacht(rSet.getString("geslacht"));
 				s.setGemCijfer(rSet.getString("gemCijfer"));
-				s.setBlijvenzitten(rSet.getString("isBlijvenZitten"));
+				s.setIsBlijvenZitten(rSet.getString("isBlijvenZitten"));
 				Studenten.add(s);
 			}
 			pStmt.executeUpdate();
@@ -150,16 +150,15 @@ public class StudentDao
 	
 	
 	}
-			public ArrayList<Student> getStudentByCode(String code){
+		public Student getStudentByCode(String code){
 		Connection conn = null;
-		ArrayList<Student> Studenten = new ArrayList<Student>();		
+		Student s = new Student();
 		try {
 			conn = GoogleCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("select * from student where studentcode = '?'");
 			pStmt.setString(1, code);
 			ResultSet rSet = pStmt.executeQuery();
 			while(rSet.next()) {
-				Student s = new Student();
 				s.setCode(rSet.getString("studentcode"));
 				s.setSchool(rSet.getString("school"));
 				s.setJaar(rSet.getString("lesjaar"));
@@ -167,8 +166,8 @@ public class StudentDao
 				s.setPostcode(rSet.getString("postcode"));
 				s.setGeslacht(rSet.getString("geslacht"));
 				s.setGemCijfer(rSet.getString("gemCijfer"));
-				s.setBlijvenzitten(rSet.getString("isBlijvenZitten"));
-				Studenten.add(s);
+				s.setIsBlijvenZitten(rSet.getString("isBlijvenZitten"));
+				
 			}
 			pStmt.executeUpdate();
 		} catch(SQLException e) {
@@ -176,7 +175,7 @@ public class StudentDao
 		} finally {
 			GoogleCon.closeConnection(conn);
 		}
-		return Studenten;
+		return s;
 	
 	
 	}
