@@ -17,7 +17,7 @@
 					<input type="text" name="email" placeholder="Voer hier uw code in">
 					<br/>
 					<label>Wachtwoord:</label>
-					<input type="text" name="wachtwoord" placeholder="Voer hier uw code in">
+					<input type="password" name="wachtwoord" placeholder="Voer hier uw code in">
 					<br/>
 					<button type="submit" name="button" value="login">login</button>
 				</form>
