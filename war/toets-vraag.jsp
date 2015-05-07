@@ -20,7 +20,7 @@
 				</div>
 				<div class="antwoord">
 					<form id="antwoord">
-						<input type="text" name="code" placeholder="Voer hier uw code in">
+						<input type="text" name="antwoord" placeholder="Voer hier uw antwoord">
 						<button type="submit" name="rekenmachine" value="toon">rekenmachine</button>
 						<button type="submit" name="button" value="volgende">volgende</button>
 					</form>
