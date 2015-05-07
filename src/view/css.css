@@ -1,0 +1,16 @@
+.body{
+}
+.header{
+	text-align: center;
+	padding-top: 0px;
+	height: 250px;
+}
+.footer{
+	text-align: center;
+}
+.content{
+	margin-left: auto;
+	margin-right: auto;
+	width: 20%;
+	height: 400px;
+}
