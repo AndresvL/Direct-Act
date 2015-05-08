@@ -83,6 +83,11 @@ public class Student{
 	public void setIsBlijvenZitten(String isBlijvenZitten) {
 		this.isBlijvenZitten = isBlijvenZitten;
 	}
+
+	public String getLesJaar() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 
 

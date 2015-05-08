@@ -63,6 +63,7 @@ public class DocentDao
 	
 	public Docent getDocentByEmail(String email){
 		Connection conn = null;
+		Docent d = new Docent();
 		try{
 			conn=GoogleCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("select * from Docent where email = '?'");
