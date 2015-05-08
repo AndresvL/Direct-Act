@@ -11,10 +11,10 @@
 				<h1>Header</h2>
 			</div>
 			<div class="content">
-				<h2>Vraag -/80</h2>
+				<h2>${vraagnummer}</h2>
 				<div class="vraag+context">
-				<p id="context">Hier komt context</p>
-				<p id="vraagstelling">Hier komt de vraagstelling</p>
+				<p id="context">${context }</p>
+				<p id="vraagstelling">${vraag }</p>
 				</div>
 				<div class="ilustratie">
 				</div>
@@ -22,7 +22,7 @@
 					<form id="antwoord">
 						<input type="text" name="antwoord" placeholder="Voer hier uw antwoord">
 						<button type="submit" name="rekenmachine" value="toon">rekenmachine</button>
-						<button type="submit" name="button" value="volgende">volgende</button>
+						<button type="submit" name="volgendeVraag" value="volgende">volgende</button>
 					</form>
 				</div>
 			</div>
