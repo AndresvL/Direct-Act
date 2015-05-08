@@ -14,11 +14,11 @@
 				<h2>${vraagnummer}</h2>
 				<table style="text-align: left;">
 					<tr class="vraag+context">
-						<th id="context">${context }</th>
+						<th id="context">${context}</th>
 						<th><img class="ilustratie" alt="" src="http://i.imgur.com/9hCvu.jpg"></img></th>
 					</tr>
 					<tr id="vraagstelling">
-						<th>${vraag }</th>
+						<th>${vraag}</th>
 					</tr>
 					<tr class="antwoord">
 						<form id="antwoord">
