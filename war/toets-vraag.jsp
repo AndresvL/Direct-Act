@@ -8,26 +8,28 @@
 	<body>
 		<div class="body">
 			<div class="header">
-				<h1>Header</h2>
+				<img alt="" src="images/logo.png" style="margin: 10px;"></img>
 			</div>
 			<div class="content">
 				<h2>Vraag -/80</h2>
-				<div class="vraag+context">
-				<p id="context">Hier komt context</p>
-				<p id="vraagstelling">Hier komt de vraagstelling</p>
-				</div>
-				<div class="ilustratie">
-				</div>
-				<div class="antwoord">
-					<form id="antwoord">
-						<input type="text" name="antwoord" placeholder="Voer hier uw antwoord">
-						<button type="submit" name="rekenmachine" value="toon">rekenmachine</button>
-						<button type="submit" name="button" value="volgende">volgende</button>
-					</form>
-				</div>
+				<table style="text-align: left;">
+					<tr class="vraag+context">
+						<th id="context">Hier komt context</th>
+						<th><img class="ilustratie" alt="" src="http://i.imgur.com/9hCvu.jpg"></img></th>
+					</tr>
+					<tr id="vraagstelling">
+						<th>Hier komt de vraagstelling</th>
+					</tr>
+					<tr class="antwoord">
+						<form id="antwoord">
+							<th><input type="text" name="antwoord" placeholder="Voer hier uw antwoord"></th>
+							<th><button type="submit" name="rekenmachine" value="toon">rekenmachine</button><button type="submit" name="button" value="volgende">volgende</button></th>
+						</form>
+					</tr>
+				</table>
 			</div>
 			<div class="footer">
-				<h6>©Footer</h6>
+				<center><h6>© Direct-ACT & Justian Knobbout</h6></center>
 			</div>
 		</div>
 	</body>

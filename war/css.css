@@ -1,16 +1,51 @@
-.body{
+body {
+	font-family: Verdana, Serif;
+}
+#links {
+	top: 100px;
+	right: 100px;
+	position: fixed;
+}
+#links a {
+	padding: 0px 20px;
 }
 .header{
-	text-align: center;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	background-color: #49DCDC;
+	display: table;
 	padding-top: 0px;
-	height: 250px;
 }
 .footer{
-	text-align: center;
+	position:fixed;
+	left: 0px;
+	bottom:0px;
+	border-top: solid #49DCDC;
+	display: table;
+	width: 100%;
 }
 .content{
+	margin-top: 10%;
 	margin-left: auto;
 	margin-right: auto;
-	width: 20%;
-	height: 400px;
+	width: 50%;
+}
+.ilustratie {
+	padding: 10px;
+	height: 200px;
+}
+label {
+	padding: 10px;
+	margin: 10px;
+}
+input {
+	padding: 10px;
+	margin: 10px;
+	width: 400px;
+}
+button {
+	padding: 5px;
+	margin: 10px;
 }

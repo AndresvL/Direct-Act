@@ -8,31 +8,46 @@
 	<body>
 		<div class="body">
 			<div class="header">
-				<h1>Header</h2>
+				<img alt="" src="images/logo.png" style="margin: 10px;"></img>
+				<div id="links">
+					<a href="">Link</a>
+					<a href="">Link</a>
+					<a href="">Link</a>
+				</div>
 			</div>
 			<div class="content">
-				<h2>Dit is de eerste keer dat je inlogt, wij vragen je een kleine enquete in te vullen:</h2>
-				<form id="vragen">
-					<label name="vraag1">Vraag</label>
-					<input type="text" name="antwoord1" placeholder="Geef hier uw antwoord">
-					<br/>
-					<label name="vraag2">Vraag</label>
-					<input type="text" name="antwoord2" placeholder="Geef hier uw antwoord">
-					<br/>
-					<label name="vraag3">Vraag</label>
-					<input type="text" name="antwoord3" placeholder="Geef hier uw antwoord">
-					<br/>
-					<label name="vraag4">Vraag</label>
-					<input type="text" name="antwoord4" placeholder="Geef hier uw antwoord">
-					<br/>
-					<label name="vraag5">Vraag</label>
-					<input type="text" name="antwoord5" placeholder="Geef hier uw antwoord">
-					<br/>
-					<button type="submit" name="button" value="login">login</button>
-				</form>
+				<h3>Dit is de eerste keer dat je inlogt, wij vragen je een kleine enquete in te vullen:</h3>
+				<table style="text-align: left;">
+					<form id="vragen">
+						<tr>
+							<th><label name="vraag1">Vraag</label></th>
+							<th><input type="text" name="antwoord1" placeholder="Geef hier uw antwoord"></th>
+						</tr>
+						<tr>
+							<th><label name="vraag2">Vraag</label></th>
+							<th><input type="text" name="antwoord2" placeholder="Geef hier uw antwoord"></th>
+						</tr>
+						<tr>
+							<th><label name="vraag3">Vraag</label></th>
+							<th><input type="text" name="antwoord3" placeholder="Geef hier uw antwoord"></th>
+						</tr>
+						<tr>
+							<th><label name="vraag4">Vraag</label></th>
+							<th><input type="text" name="antwoord4" placeholder="Geef hier uw antwoord"></th>
+						</tr>
+						<tr>
+							<th><label name="vraag5">Vraag</label></th>
+							<th><input type="text" name="antwoord5" placeholder="Geef hier uw antwoord"></th>
+						</tr>
+						<tr>
+							<th></th>
+							<th><button type="submit" name="button" value="next">Verder</button></th>
+						</tr>
+					</form>
+				</table>
 			</div>
 			<div class="footer">
-				<h6>©Footer</h6>
+				<center><h6>© Direct-ACT & Justian Knobbout</h6></center>
 			</div>
 		</div>
 	</body>

@@ -8,7 +8,7 @@
 	<body>
 		<div class="body">
 			<div class="header">
-				<h1>Header</h2>
+				<img alt="" src="images/logo.png" style="margin: 10px;"></img>
 			</div>
 			<div class="content">
 				<h2>Log hier in als Student</h2>
@@ -18,7 +18,7 @@
 				</form>
 			</div>
 			<div class="footer">
-				<h6>©Footer</h6>
+				<center><h6>© Direct-ACT & Justian Knobbout</h6></center>
 			</div>
 		</div>
 	</body>

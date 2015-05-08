@@ -8,22 +8,29 @@
 	<body>
 		<div class="body">
 			<div class="header">
-				<h1>Header</h2>
+				<img alt="" src="images/logo.png" style="margin: 10px;"></img>
 			</div>
 			<div class="content">
 				<h2>Log hier in als Docent of Beheerder</h2>
-				<form id="studentInlog">
-					<label>Email Adres:</label>
-					<input type="text" name="email" placeholder="Voer hier uw code in">
-					<br/>
-					<label>Wachtwoord:</label>
-					<input type="password" name="wachtwoord" placeholder="Voer hier uw code in">
-					<br/>
-					<button type="submit" name="button" value="login">login</button>
-				</form>
+				<table style="text-align: left;">
+					<form id="studentInlog">
+						<tr>
+							<th><label>Email Adres:</label></th>
+							<th><input type="text" name="email" placeholder="Voer hier uw code in"></th>
+						</tr>
+						<tr>
+							<th><label>Wachtwoord:</label></th>
+							<th><input type="password" name="wachtwoord" placeholder="Voer hier uw code in"></th>
+						</tr>
+						<tr>
+							<th></th>
+							<th><button type="submit" name="button" value="login">login</button></th>
+						</tr>
+					</form>
+				</table>
 			</div>
 			<div class="footer">
-				<h6>©Footer</h6>
+				<center><h6>© Direct-ACT & Justian Knobbout</h6></center>
 			</div>
 		</div>
 	</body>
