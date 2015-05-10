@@ -12,7 +12,7 @@
 			</div>
 			<div class="content">
 				<h2>Log hier in als Student</h2>
-				<form id="studentInlog">
+				<form id="studentInlog" action="login-student.do">
 					<input type="text" name="code" placeholder="Voer hier uw code in">
 					<button type="submit" name="button" value="login">login</button>
 				</form>

@@ -9,6 +9,14 @@ public abstract class Gebruiker {
 		voornaam = vN;
 		achternaam = aN;
 	}
+	public Gebruiker() {
+		// TODO Auto-generated constructor stub
+	}
+	public Gebruiker(String email2, String vN, String aN) {
+		email = email2;
+		voornaam = vN;
+		achternaam = aN;
+	}
 	protected void setEmail(String em){
 		email = em;
 	}

@@ -7,6 +7,7 @@ import java.sql.Connection;
 
 import DBUtil.GoogleCon;
 import domein.Docent;
+import domein.Gebruiker;
 
 public class DocentDao
 {
@@ -68,12 +69,19 @@ public class DocentDao
 			conn=GoogleCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("select * from Docent where email = '?'");
 			pStmt.setString(1,email);
-			pStmt.executeUpdate();
+			ResultSet rSet = pStmt.executeQuery();
+			d.setEmail(rSet.getString("email"));
+			d.setVoornaam(rSet.getString("voornaam"));
+			d.setAchternaam(rSet.getString("achternaam"));
+			d.setWachtwoord(rSet.getString("wachtwoord"));
+			d.setSchoolnaam(rSet.getString("schoolplaats"));
+			d.setSchoolplaats(rSet.getString("schoolplaats"));
 		}catch(SQLException e){
 			e.printStackTrace();
 		}finally{
 			GoogleCon.closeConnection(conn);
 		}
+		return d;
 		
 	}
 	

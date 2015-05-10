@@ -158,7 +158,7 @@ public class StudentDao
 			PreparedStatement pStmt = conn.prepareStatement("select * from student where studentcode = '?'");
 			pStmt.setString(1, code);
 			ResultSet rSet = pStmt.executeQuery();
-			while(rSet.next()) {
+			
 				s.setCode(rSet.getString("studentcode"));
 				s.setSchool(rSet.getString("school"));
 				s.setJaar(rSet.getString("lesjaar"));
@@ -167,9 +167,7 @@ public class StudentDao
 				s.setGeslacht(rSet.getString("geslacht"));
 				s.setGemCijfer(rSet.getString("gemCijfer"));
 				s.setIsBlijvenZitten(rSet.getString("isBlijvenZitten"));
-				
-			}
-			pStmt.executeUpdate();
+			
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
