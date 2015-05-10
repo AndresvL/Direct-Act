@@ -35,7 +35,7 @@ public class LoginStudentServlet extends HttpServlet{
 								
 			}else
 				req.setAttribute("msgs", "code bestaat niet");
-			rd = req.getRequestDispatcher("login-docent.jsp");
+			rd = req.getRequestDispatcher("/login-docent.jsp");
 				
 		}
 		rd.forward(req, resp);
