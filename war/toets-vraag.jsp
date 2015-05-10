@@ -11,7 +11,7 @@
 				<img alt="" src="images/logo.png" style="margin: 10px;"></img>
 			</div>
 			<div class="content">
-				<h2>${vraagnummer}</h2>
+				<h2>Vraag ${vraagnummer}</h2>
 				<table style="text-align: left;">
 					<tr class="vraag+context">
 						<th id="context">${context}</th>
