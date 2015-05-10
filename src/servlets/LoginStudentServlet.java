@@ -15,7 +15,7 @@ import domein.Vraag;
 
 public class LoginStudentServlet extends HttpServlet{
 
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 194503685680L;
 	private StudentController controller = new StudentController();
 	private VraagController vc = new VraagController();
 	

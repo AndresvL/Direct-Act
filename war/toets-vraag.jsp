@@ -21,7 +21,7 @@
 						<th>${vraag}</th>
 					</tr>
 					<tr class="antwoord">
-						<form id="antwoord">
+						<form id="antwoord" action="toets-vraag.do" method="get">
 							<th><input type="text" name="antwoord" placeholder="Voer hier uw antwoord"></th>
 							<th><button type="submit" name="rekenmachine" value="toon">rekenmachine</button><button type="submit" name="button" value="volgende">volgende</button></th>
 						</form>

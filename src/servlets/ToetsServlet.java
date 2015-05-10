@@ -15,9 +15,13 @@ import domein.Antwoord;
 
 
 public class ToetsServlet extends HttpServlet{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1120482309534L;
 	private AntwoordController antw = new AntwoordController();
 	private VraagController vrg = new VraagController();
-	private static final long serialVersionUID = 1L;
+	
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		RequestDispatcher rd = null;
