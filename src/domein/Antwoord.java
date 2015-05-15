@@ -8,7 +8,6 @@ public class Antwoord {
 	private enum categorie{getallen,meetkunde,verhoudingen,verbanden}
 	categorie cat;
 	public Antwoord(){
-		
 	}
 	public Antwoord(int nr,String antw,String cat){
 		setNummer(nr);
