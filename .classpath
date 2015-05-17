@@ -2,9 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/apache-tomcat-8.0.5/lib/servlet-api.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/Laptop Dennie/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
@@ -15,5 +15,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/apache-tomcat-8.0.5/lib/tomcat-api.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/apache-tomcat-8.0.5/lib/tomcat-api.jar"/>
+	<classpathentry kind="lib" path="C:/apache-tomcat-8.0.5/lib/servlet-api.jar"/>
+>>>>>>> origin/master
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
