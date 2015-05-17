@@ -4,15 +4,15 @@ public class Vraag {
 	private boolean rekenmachine;
 	private int nummer;
 	private String context;
-	private String stelling;
+	private boolean afbeelding;
 	private enum type{getallen,verhoudingen, verbanden, meetkunde}
 	type cat;
 	
-	public Vraag(boolean rek, int nr, String con, String vrg, String t){
+	public Vraag(boolean rek, int nr, String con, boolean af, String t){
 		this.setRekenmachine(rek);
 		this.setNummer(nr);
 		this.setContext(con);
-		this.setStelling(vrg);
+		this.setAfbeelding(af);
 		this.setType(t);
 		
 	}
@@ -57,12 +57,12 @@ public class Vraag {
 		this.context = context;
 	}
 
-	public String getStelling() {
-		return stelling;
+	public boolean isAfbeelding() {
+		return afbeelding;
 	}
 
-	public void setStelling(String stelling) {
-		this.stelling = stelling;
+	public void setAfbeelding(boolean afbeelding) {
+		this.afbeelding = afbeelding;
 	}
 	
 }

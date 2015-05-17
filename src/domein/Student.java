@@ -1,5 +1,7 @@
 package domein;
 
+import java.sql.Date;
+
 public class Student{
 
 	private boolean firstTime;
@@ -7,10 +9,9 @@ public class Student{
 	private String school;
 	private String jaar;
 	private String niveau;
-	private String postcode;
 	private String geslacht;
 	private String cijfer;
-	private String isBlijvenZitten;
+	private Date isBlijvenZitten;
 
 	public boolean isFirstTime() {
 		return firstTime;
@@ -52,14 +53,6 @@ public class Student{
 		this.niveau = niveau;
 	}
 
-	public String getPostcode() {
-		return postcode;
-	}
-
-	public void setPostcode(String postcode) {
-		this.postcode = postcode;
-	}
-
 	public String getGeslacht() {
 		return geslacht;
 	}
@@ -76,11 +69,11 @@ public class Student{
 		this.cijfer = cijfer;
 	}
 
-	public String getIsBlijvenZitten() {
+	public Date getIsBlijvenZitten() {
 		return isBlijvenZitten;
 	}
 
-	public void setIsBlijvenZitten(String isBlijvenZitten) {
+	public void setIsBlijvenZitten(Date isBlijvenZitten) {
 		this.isBlijvenZitten = isBlijvenZitten;
 	}
 
