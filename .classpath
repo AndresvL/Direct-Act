@@ -5,6 +5,7 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/Laptop Dennie/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
@@ -20,4 +21,7 @@
 	<classpathentry kind="lib" path="C:/apache-tomcat-8.0.5/lib/servlet-api.jar"/>
 >>>>>>> origin/master
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
+=======
+	<classpathentry kind="output" path="bin"/>
+>>>>>>> parent of ee83d4f... ignore
 </classpath>

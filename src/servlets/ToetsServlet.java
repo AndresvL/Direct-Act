@@ -25,7 +25,7 @@ public class ToetsServlet extends HttpServlet{
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		RequestDispatcher rd = null;
-		if(req.getParameter("button").equals("volgende")){
+		if(req.getParameter("volgendeVraag").equals("volgende")){
 			Antwoord a = new Antwoord();
 			Vraag huidig = (Vraag)req.getSession().getAttribute("vraag");
 			
@@ -41,8 +41,8 @@ public class ToetsServlet extends HttpServlet{
 				req.getSession().setAttribute("antwoord", "");
 				req.getSession().setAttribute("vraagstelling", v.getStelling());
 				req.getSession().setAttribute("vraag", v);
-				rd = req.getRequestDispatcher("/toets-vraag.jsp");
-			}else rd = req.getRequestDispatcher("/toets-eind.jsp");
+				req.getRequestDispatcher("/toets-vraag.jsp");
+			}else req.getRequestDispatcher("/toets-eind.jsp");
 		}
 		rd.forward(req,resp);
 	}
