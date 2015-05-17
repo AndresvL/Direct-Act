@@ -33,10 +33,10 @@ public class LoginStudentServlet extends HttpServlet{
 				if(s.isFirstTime())rd = req.getRequestDispatcher("/enquette.jsp");
 				else rd=req.getRequestDispatcher("/toets-vraag.jsp");
 								
-			}else
+			}else{
 				req.setAttribute("msgs", "code bestaat niet");
 			rd = req.getRequestDispatcher("/login-docent.jsp");
-				
+			}
 		}
 		rd.forward(req, resp);
 		

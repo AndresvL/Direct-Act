@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import DBUtil.GoogleCon;
+import DBUtil.SQLCon;
 import domein.Antwoord;
 import domein.Vraag;
 public class ToetsDAO{
@@ -14,8 +15,8 @@ public Vraag getVraagByNr(int nr){
 	Connection conn = null;
 	Vraag v = null;
 	try{
-		conn=GoogleCon.getConnection();
-		PreparedStatement pStmt = conn.prepareStatement("select * from Vraag where nr = '?'");
+		conn=SQLCon.getConnection();
+		PreparedStatement pStmt = conn.prepareStatement("select * from vraag where vraagNummer = '?'");
 		pStmt.setInt(1,nr);
 		ResultSet rSet = pStmt.executeQuery();
 		v = new Vraag(rSet.getBoolean("rekenmachine"),rSet.getInt("nummer"),rSet.getString("context"),rSet.getString("stelling"), rSet.getString("categorie"));
