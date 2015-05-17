@@ -1,7 +1,5 @@
 package domein;
 
-
-
 public class Antwoord {
 	private int nummer;
 	private String antw;
