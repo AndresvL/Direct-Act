@@ -68,5 +68,6 @@
 		<servlet-name>enquette servlet</servlet-name>
 		<url-pattern>/enquete.do</url-pattern>
 	</servlet-mapping>
+	
 
 </web-app> 
