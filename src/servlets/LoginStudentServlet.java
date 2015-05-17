@@ -31,11 +31,11 @@ public class LoginStudentServlet extends HttpServlet{
 				req.getSession().setAttribute("student", s);
 				req.getSession().setAttribute("vraag", v);
 				if(s.isFirstTime())rd = req.getRequestDispatcher("/enquette.jsp");
-				else rd=req.getRequestDispatcher("/toets-vraag.jsp");
+				else rd=req.getRequestDispatcher("/toets-vraag.jsp");System.out.println("Studentservlet code: "+code);
 								
 			}else{
 				req.setAttribute("msgs", "code bestaat niet");
-			rd = req.getRequestDispatcher("/login-docent.jsp");
+			rd = req.getRequestDispatcher("/login-student.jsp");
 			}
 		}
 		rd.forward(req, resp);

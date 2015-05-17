@@ -159,19 +159,22 @@ public class StudentDAO {
 			conn = connection.getConnection();
 			PreparedStatement pStmt = conn
 					.prepareStatement("SELECT * FROM student WHERE studentcode=?");
-			pStmt.setString(1, code);
+			pStmt.setInt(1, Integer.parseInt(code));
 			ResultSet rSet = pStmt.executeQuery();
-			while(rSet.next()){
-				System.out.println("studentnr "+rSet.getInt("studentcode"));
-				s.setCode(code);
-				s.setSchool(rSet.getString("school"));
-				s.setJaar(rSet.getString("lesjaar"));
-				s.setNiveau(rSet.getString("niveau"));
-				s.setGeslacht(rSet.getString("geslacht"));
-				s.setIsBlijvenZitten(rSet.getDate("wanneerBlijvenZitten"));
-				s.setGemCijfer(rSet.getString("gemWiskundeCijfer"));
-			}	
-
+			if (rSet.next()) {
+				while (rSet.next()) {
+					System.out.println("studentnr " + pStmt);
+					s.setCode(code);
+					s.setSchool(rSet.getString("school"));
+					s.setJaar(rSet.getString("lesjaar"));
+					s.setNiveau(rSet.getString("niveau"));
+					s.setGeslacht(rSet.getString("geslacht"));
+					s.setIsBlijvenZitten(rSet.getDate("wanneerBlijvenZitten"));
+					s.setGemCijfer(rSet.getString("gemWiskundeCijfer"));
+				}
+			} else {
+				s = null;
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
