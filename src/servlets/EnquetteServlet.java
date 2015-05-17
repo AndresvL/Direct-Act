@@ -1,5 +1,5 @@
 package servlets;
 
-public class EnquetteServlet {
-
+public class EnquetteServlet{
+	
 }

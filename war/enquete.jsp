@@ -18,7 +18,7 @@
 			<div class="content">
 				<h3>Dit is de eerste keer dat je inlogt, wij vragen je een kleine enquete in te vullen:</h3>
 				<table style="text-align: left;">
-					<form id="vragen">
+					<form id="vragen" action= "enquete.do" methode= "POST">
 						<tr>
 							<th><label name="vraag1">Vraag</label></th>
 							<th><input type="text" name="antwoord1" placeholder="Geef hier uw antwoord"></th>
