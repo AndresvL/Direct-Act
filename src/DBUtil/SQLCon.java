@@ -10,7 +10,7 @@ public class SQLCon {
 
 	public static Connection getConnection() {
 		try{			
-			Class.forName("com.mysql.jdbc.GoogleDriver");
+			Class.forName("com.mysql.jdbc.Driver");
 			conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/tho7",username,passwd);
 		}catch(Exception e){
 			e.printStackTrace();

@@ -7,54 +7,57 @@ import java.sql.Connection;
 import java.util.ArrayList;
 
 import DBUtil.GoogleCon;
+import DBUtil.SQLCon;
 import domein.Student;
 
-public class StudentDao
+public class StudentDAO
 {
 	public void CreateStudent(Student s){
 		Connection conn = null;
 		try{
-			conn=GoogleCon.getConnection();
-			PreparedStatement pStmt = conn.prepareStatement("Insert into Student(studentcode, school,lesjaar,niveau,postcode,geslacht,gemCijfer,isBlijvenZitten)values(?,?,?,?,?,?,?,?)");
+			conn=SQLCon.getConnection();
+			PreparedStatement pStmt = conn.prepareStatement("Insert into Student(studentcode, school,lesjaar,profiel,niveau,geslacht,gemWiskundeCijfer,wanneerBlijvenZitten,docent_email)values(?,?,?,?,?,?,?,?,?)");
 			pStmt.setString(1, s.getCode());
 			pStmt.setString(2, s.getSchool());
 			pStmt.setString(3, s.getLesJaar());
-			pStmt.setString(4, s.getNiveau());
-			pStmt.setString(5, s.getPostcode());
+			pStmt.setString(4, s.getProfiel());
+			pStmt.setString(5, s.getNiveau());
 			pStmt.setString(6, s.getGeslacht());
-			pStmt.setString(7, s.getGemCijfer());
-			pStmt.setString(8, s.getIsBlijvenZitten());
+			pStmt.setString(7, s.getGemWiskundeCijfer());
+			pStmt.setString(8, s.getWanneerBlijvenZitten());
+			pStmt.setString(9, s.getDocent());
 			pStmt.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally{
-			GoogleCon.closeConnection(conn);
+			SQLCon.closeConnection(conn);
 		}
 	}
 		public ArrayList<Student> getStudenten(){
 		Connection conn = null;
 		ArrayList<Student> Studenten = new ArrayList<Student>();		
 		try {
-			conn = GoogleCon.getConnection();
+			conn = SQLCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("select * from student");
 			ResultSet rSet = pStmt.executeQuery();
 			while(rSet.next()) {
 				Student s = new Student();
-				s.setCode(rSet.getString("studencode"));
+				s.setCode(rSet.getString("studentcode"));
 				s.setSchool(rSet.getString("school"));
 				s.setJaar(rSet.getString("lesjaar"));
+				s.setProfiel(rSet.getString("profiel"));
 				s.setNiveau(rSet.getString("niveau"));
-				s.setPostcode(rSet.getString("postcode"));
 				s.setGeslacht(rSet.getString("geslacht"));
-				s.setGemCijfer(rSet.getString("gemCijfer"));
-				s.setIsBlijvenZitten(rSet.getString("isBlijvenZitten"));
+				s.setGemWiskundeCijfer(rSet.getString("gemWiskundeCijfer"));
+				s.setWanneerBlijvenZitten(rSet.getString("wanneerBlijvenZitten"));
+				s.setDocent(rSet.getString("docent"));
 				Studenten.add(s);
 			}
 			pStmt.executeUpdate();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
-			GoogleCon.closeConnection(conn);
+			SQLCon.closeConnection(conn);
 		}
 		return Studenten;
 	
@@ -64,7 +67,7 @@ public class StudentDao
 		Connection conn = null;
 		ArrayList<Student> Studenten = new ArrayList<Student>();		
 		try {
-			conn = GoogleCon.getConnection();
+			conn = SQLCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("select * from student where geslacht = '?'");
 			pStmt.setString(1, ges);
 			ResultSet rSet = pStmt.executeQuery();
@@ -73,18 +76,19 @@ public class StudentDao
 				s.setCode(rSet.getString("studentcode"));
 				s.setSchool(rSet.getString("school"));
 				s.setJaar(rSet.getString("lesjaar"));
+				s.setProfiel(rSet.getString("profiel"));
 				s.setNiveau(rSet.getString("niveau"));
-				s.setPostcode(rSet.getString("postcode"));
 				s.setGeslacht(rSet.getString("geslacht"));
-				s.setGemCijfer(rSet.getString("gemCijfer"));
-				s.setIsBlijvenZitten(rSet.getString("isBlijvenZitten"));
+				s.setGemWiskundeCijfer(rSet.getString("gemWiskundeCijfer"));
+				s.setWanneerBlijvenZitten(rSet.getString("wanneerBlijvenZitten"));
+				s.setDocent(rSet.getString("docent"));
 				Studenten.add(s);
 			}
 			pStmt.executeUpdate();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
-			GoogleCon.closeConnection(conn);
+			SQLCon.closeConnection(conn);
 		}
 		return Studenten;
 	
@@ -94,7 +98,7 @@ public class StudentDao
 		Connection conn = null;
 		ArrayList<Student> Studenten = new ArrayList<Student>();		
 		try {
-			conn = GoogleCon.getConnection();
+			conn = SQLCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("select * from student where niveau = '?'");
 			pStmt.setString(1, niv);
 			ResultSet rSet = pStmt.executeQuery();
@@ -103,18 +107,19 @@ public class StudentDao
 				s.setCode(rSet.getString("studentcode"));
 				s.setSchool(rSet.getString("school"));
 				s.setJaar(rSet.getString("lesjaar"));
+				s.setProfiel(rSet.getString("profiel"));
 				s.setNiveau(rSet.getString("niveau"));
-				s.setPostcode(rSet.getString("postcode"));
 				s.setGeslacht(rSet.getString("geslacht"));
-				s.setGemCijfer(rSet.getString("gemCijfer"));
-				s.setIsBlijvenZitten(rSet.getString("isBlijvenZitten"));
+				s.setGemWiskundeCijfer(rSet.getString("gemWiskundeCijfer"));
+				s.setWanneerBlijvenZitten(rSet.getString("wanneerBlijvenZitten"));
+				s.setDocent(rSet.getString("docent"));
 				Studenten.add(s);
 			}
 			pStmt.executeUpdate();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
-			GoogleCon.closeConnection(conn);
+			SQLCon.closeConnection(conn);
 		}
 		return Studenten;
 	
@@ -124,7 +129,7 @@ public class StudentDao
 		Connection conn = null;
 		ArrayList<Student> Studenten = new ArrayList<Student>();		
 		try {
-			conn = GoogleCon.getConnection();
+			conn = SQLCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("select * from student where lesjaar = '?'");
 			pStmt.setString(1, jaar);
 			ResultSet rSet = pStmt.executeQuery();
@@ -133,18 +138,19 @@ public class StudentDao
 				s.setCode(rSet.getString("studentcode"));
 				s.setSchool(rSet.getString("school"));
 				s.setJaar(rSet.getString("lesjaar"));
+				s.setProfiel(rSet.getString("profiel"));
 				s.setNiveau(rSet.getString("niveau"));
-				s.setPostcode(rSet.getString("postcode"));
 				s.setGeslacht(rSet.getString("geslacht"));
-				s.setGemCijfer(rSet.getString("gemCijfer"));
-				s.setIsBlijvenZitten(rSet.getString("isBlijvenZitten"));
+				s.setGemWiskundeCijfer(rSet.getString("gemWiskundeCijfer"));
+				s.setWanneerBlijvenZitten(rSet.getString("wanneerBlijvenZitten"));
+				s.setDocent(rSet.getString("docent"));
 				Studenten.add(s);
 			}
 			pStmt.executeUpdate();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
-			GoogleCon.closeConnection(conn);
+			SQLCon.closeConnection(conn);
 		}
 		return Studenten;
 	
@@ -154,24 +160,24 @@ public class StudentDao
 		Connection conn = null;
 		Student s = new Student();
 		try {
-			conn = GoogleCon.getConnection();
+			conn = SQLCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("select * from student where studentcode = '?'");
 			pStmt.setString(1, code);
 			ResultSet rSet = pStmt.executeQuery();
-			
-				s.setCode(rSet.getString("studentcode"));
-				s.setSchool(rSet.getString("school"));
-				s.setJaar(rSet.getString("lesjaar"));
-				s.setNiveau(rSet.getString("niveau"));
-				s.setPostcode(rSet.getString("postcode"));
-				s.setGeslacht(rSet.getString("geslacht"));
-				s.setGemCijfer(rSet.getString("gemCijfer"));
-				s.setIsBlijvenZitten(rSet.getString("isBlijvenZitten"));
+			s.setCode(rSet.getString("studentcode"));
+			s.setSchool(rSet.getString("school"));
+			s.setJaar(rSet.getString("lesjaar"));
+			s.setProfiel(rSet.getString("profiel"));
+			s.setNiveau(rSet.getString("niveau"));
+			s.setGeslacht(rSet.getString("geslacht"));
+			s.setGemWiskundeCijfer(rSet.getString("gemWiskundeCijfer"));
+			s.setWanneerBlijvenZitten(rSet.getString("wanneerBlijvenZitten"));
+			s.setDocent(rSet.getString("docent"));
 			
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
-			GoogleCon.closeConnection(conn);
+			SQLCon.closeConnection(conn);
 		}
 		return s;
 	

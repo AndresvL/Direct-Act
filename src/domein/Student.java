@@ -5,12 +5,13 @@ public class Student{
 	private boolean firstTime;
 	private String code;
 	private String school;
-	private String jaar;
+	private String lesjaar;
+	private String profiel;
 	private String niveau;
-	private String postcode;
 	private String geslacht;
-	private String cijfer;
-	private String isBlijvenZitten;
+	private String gemWiskundeCijfer;
+	private String wanneerBlijvenZitten;
+	private String docent;
 
 	public boolean isFirstTime() {
 		return firstTime;
@@ -37,11 +38,11 @@ public class Student{
 	}
 
 	public String getJaar() {
-		return jaar;
+		return lesjaar;
 	}
 
 	public void setJaar(String jaar) {
-		this.jaar = jaar;
+		this.lesjaar = jaar;
 	}
 
 	public String getNiveau() {
@@ -51,13 +52,13 @@ public class Student{
 	public void setNiveau(String niveau) {
 		this.niveau = niveau;
 	}
-
-	public String getPostcode() {
-		return postcode;
+	
+	public String getProfiel() {
+		return profiel;
 	}
 
-	public void setPostcode(String postcode) {
-		this.postcode = postcode;
+	public void setProfiel(String profiel) {
+		this.profiel = profiel;
 	}
 
 	public String getGeslacht() {
@@ -68,25 +69,33 @@ public class Student{
 		this.geslacht = geslacht;
 	}
 
-	public String getGemCijfer() {
-		return cijfer;
+	public String getGemWiskundeCijfer() {
+		return gemWiskundeCijfer;
 	}
 
-	public void setGemCijfer(String cijfer) {
-		this.cijfer = cijfer;
+	public void setGemWiskundeCijfer(String cijfer) {
+		this.gemWiskundeCijfer = cijfer;
 	}
 
-	public String getIsBlijvenZitten() {
-		return isBlijvenZitten;
+	public String getWanneerBlijvenZitten() {
+		return wanneerBlijvenZitten;
 	}
 
-	public void setIsBlijvenZitten(String isBlijvenZitten) {
-		this.isBlijvenZitten = isBlijvenZitten;
+	public void setWanneerBlijvenZitten(String isBlijvenZitten) {
+		this.wanneerBlijvenZitten = isBlijvenZitten;
 	}
 
 	public String getLesJaar() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public String getDocent() {
+		return docent;
+	}
+
+	public void setDocent(String docent) {
+		this.docent = docent;
 	}
 	
 

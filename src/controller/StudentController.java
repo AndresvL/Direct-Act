@@ -1,9 +1,9 @@
 package controller;
-import DAO.StudentDao;
+import DAO.StudentDAO;
 import domein.Student;
 
 public class StudentController {
-	private StudentDao dao = new StudentDao();
+	private StudentDAO dao = new StudentDAO();
 
 	public boolean checkCode(String code) {
 		if(dao.getStudentByCode(code) != null)return true; else return false;

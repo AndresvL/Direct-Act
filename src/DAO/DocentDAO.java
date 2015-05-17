@@ -9,7 +9,7 @@ import DBUtil.GoogleCon;
 import domein.Docent;
 import domein.Gebruiker;
 
-public class DocentDao
+public class DocentDAO
 {
 	public void CreateDocent(Docent d){
 		Connection conn = null;
