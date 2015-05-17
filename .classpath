@@ -1,21 +1,8 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/Users/Andres/Documents/tomcat8/lib/tomcat-api.jar"/>
 	<classpathentry kind="lib" path="/Users/Andres/Documents/tomcat8/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="/Users/Andres/Documents/tomcat8/lib/tomcat-api.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
-=======
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/apache-tomcat-8.0.5/lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="C:/apache-tomcat-8.0.5/lib/tomcat-api.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="output" path="war/WEB-INF/classes"/>
-</classpath>
->>>>>>> branch 'master' of https://github.com/makingdark/Direct-Act.git
