@@ -7,7 +7,7 @@ public class VraagController {
 
 	ToetsDAO dao = new ToetsDAO();
 	public Vraag eersteVraag() {
-		Vraag v = dao.getVraagByNr(0);
+		Vraag v = dao.getVraagByNr(1);
 		
 		return v;
 	}

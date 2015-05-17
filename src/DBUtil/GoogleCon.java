@@ -3,35 +3,26 @@ package DBUtil;
 import java.sql.*;
 
 public class GoogleCon {
-	private static Connection conn = null;
+	private static Connection conn=null;
+	private static String username = "root";
+	private static String passwd = "root";
 	
 
-	public static void connect() {
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			System.out.print("Database is connected!");
-		} catch (Exception e) {
-			System.out.print("Do not connect to DB - Error:" + e);
-		}
-	}
-	public Connection getConnection() {
-		connect();
-		String url = "jdbc:mysql://localhost:8889/Rekentoets";
-		String username = "root";
-		String passwd = "root";
-		try {
-			conn = DriverManager.getConnection(url, username, passwd);
-			System.out.println("joepie gelukt");
-		} catch (SQLException e) {
-			System.out.print("niet gelukt");
+	public static Connection getConnection() {
+		try{			
+			Class.forName("com.mysql.jdbc.GoogleDriver");
+			conn=DriverManager.getConnection("jdbc:google:rdbms://[instance]/[database]",username,passwd);
+		}catch(Exception e){
 			e.printStackTrace();
+			System.out.println("failed to connect to database");
 		}
 		return conn;
 	}
-	public static void closeConnection(Connection conn) {
-		try {
+	
+	public static void closeConnection(Connection conn){
+		try{
 			conn.close();
-		} catch (Exception e) {
+		}catch(Exception e){
 			e.getMessage();
 		}
 	}

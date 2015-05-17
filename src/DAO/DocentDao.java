@@ -11,11 +11,10 @@ import domein.Gebruiker;
 
 public class DocentDao
 {
-	private GoogleCon connection = new GoogleCon();
 	public void CreateDocent(Docent d){
 		Connection conn = null;
 		try{
-			conn = connection.getConnection();
+			conn=GoogleCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("Insert into Docent(email, wachtwoord,voornaam,achternaam,schoolnaam,schoolplaats)values(?,?,?,?,?,?)");
 			pStmt.setString(1, d.getEmail());
 			pStmt.setString(2, d.getWachtwoord());
@@ -35,7 +34,7 @@ public class DocentDao
 		Connection conn = null;
 
 		try{
-			conn = connection.getConnection();
+			conn=GoogleCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("delete from Docent where email = '?'");
 			pStmt.setString(1,email);
 			pStmt.executeUpdate();
@@ -50,7 +49,7 @@ public class DocentDao
 	public void updateDocent(Docent d){
 		Connection conn = null;
 		try{
-			conn = connection.getConnection();
+			conn=GoogleCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("update Docent set email='?',schoolnaam='?',schoolplaats='?'");
 			pStmt.setString(1,d.getEmail());
 			pStmt.setString(2,d.getSchoolnaam());
@@ -67,7 +66,7 @@ public class DocentDao
 		Connection conn = null;
 		Docent d = new Docent();
 		try{
-			conn = connection.getConnection();
+			conn=GoogleCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("select * from Docent where email = '?'");
 			pStmt.setString(1,email);
 			ResultSet rSet = pStmt.executeQuery();

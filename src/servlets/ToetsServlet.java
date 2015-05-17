@@ -39,6 +39,7 @@ public class ToetsServlet extends HttpServlet{
 				req.getSession().setAttribute("vraagnummer", v.getNummer());
 				req.getSession().setAttribute("context", v.getContext());
 				req.getSession().setAttribute("antwoord", "");
+				req.getSession().setAttribute("vraagstelling", v.getStelling());
 				req.getSession().setAttribute("vraag", v);
 				rd = req.getRequestDispatcher("/toets-vraag.jsp");
 			}else rd = req.getRequestDispatcher("/toets-eind.jsp");
