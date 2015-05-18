@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+<<<<<<< HEAD
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Users/Ciaran/Downloads/mysql-connector-java-5.1.30-bin.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/apache-tomcat-8.0.22/lib/servlet-api.jar"/>
 	<classpathentry exported="true" kind="lib" path="C:/apache-tomcat-8.0.22/lib/tomcat-api.jar"/>
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Theolice/Dropbox/tho7/mysql-connector-java-5.1.30-bin.jar"/>
+	<classpathentry kind="lib" path="C:/apache-tomcat-8.0.22/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/apache-tomcat-8.0.22/lib/tomcat-api.jar"/>
+>>>>>>> branch 'master' of https://github.com/makingdark/Direct-Act.git
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
