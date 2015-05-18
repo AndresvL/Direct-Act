@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.util.ArrayList;
 
 import DBUtil.GoogleCon;
+import DBUtil.SQLCon;
 import domein.Student;
 
 public class StudentDAO {
@@ -156,15 +157,14 @@ public class StudentDAO {
 		Connection conn = null;
 		Student s = new Student();
 		try {
-			conn = connection.getConnection();
-			PreparedStatement pStmt = conn
-					.prepareStatement("SELECT * FROM student WHERE studentcode=?");
+			conn = SQLCon.getConnection();
+			PreparedStatement pStmt = conn.prepareStatement("SELECT * FROM student WHERE studentcode=?");
 			pStmt.setInt(1, Integer.parseInt(code));
 			ResultSet rSet = pStmt.executeQuery();
 			if (rSet.next()) {
 				while (rSet.next()) {
-					System.out.println("studentnr " + pStmt);
 					s.setCode(code);
+					System.out.println(rSet.getString("school"));
 					s.setSchool(rSet.getString("school"));
 					s.setJaar(rSet.getString("lesjaar"));
 					s.setNiveau(rSet.getString("niveau"));

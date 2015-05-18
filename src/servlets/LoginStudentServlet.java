@@ -29,9 +29,11 @@ public class LoginStudentServlet extends HttpServlet{
 			if(controller.checkCode(code)){
 				controller.setStudent(s,code);
 				req.getSession().setAttribute("student", s);
-				req.getSession().setAttribute("vraag", v);
+				req.getSession().setAttribute("vraag", v.getVraagstelling());
+				req.getSession().setAttribute("vraagnummer", v.getNummer());
+				req.getSession().setAttribute("context", v.getContext());
 				if(s.isFirstTime())rd = req.getRequestDispatcher("/enquette.jsp");
-				else rd=req.getRequestDispatcher("/toets-vraag.jsp");System.out.println("Studentservlet code: "+code);
+				else rd=req.getRequestDispatcher("/toets-vraag.jsp");
 								
 			}else{
 				req.setAttribute("msgs", "code bestaat niet");
