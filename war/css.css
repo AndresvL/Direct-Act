@@ -9,6 +9,10 @@ body {
 #links a {
 	padding: 0px 20px;
 }
+.antwoord {
+	position: absolute;
+	padding-top: 5%;
+}
 .header{
 	position: fixed;
 	left: 0px;
@@ -27,13 +31,14 @@ body {
 	width: 100%;
 }
 .content{
-	margin-top: 10%;
+	margin-top: 15%;
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
 }
 .ilustratie {
-	padding: 10px;
+	position: relative;
+	margin-left: 70%;
 	height: 200px;
 }
 label {
