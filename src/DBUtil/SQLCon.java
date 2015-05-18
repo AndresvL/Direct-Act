@@ -8,7 +8,7 @@ private static Connection conn = null;
 	public static Connection getConnection() {
 		String url = "jdbc:mysql://localhost:3306/rekenen";
 		String username = "root";
-		String passwd = "admin";
+		String passwd = "";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			
