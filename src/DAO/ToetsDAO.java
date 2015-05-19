@@ -22,7 +22,7 @@ public Vraag getVraagByNr(int nr){
 		pStmt.setInt(1,nr);
 		rSet = pStmt.executeQuery();
 		while(rSet.next()){
-			v = new Vraag(rSet.getBoolean("heeftRekenmachine"),rSet.getInt("vraagNummer"),rSet.getString("context"),rSet.getBoolean("afbeelding"), rSet.getString("categorie"), rSet.getString("opgave"));
+			v = new Vraag(rSet.getBoolean("heeftRekenmachine"),rSet.getInt("vraagNummer"),rSet.getString("context"),rSet.getBoolean("afbeelding"), rSet.getString("categorie"), rSet.getString("opgave"), rSet.getString("antwoord1"));
 		}
 	}catch(SQLException e){
 		e.printStackTrace();
