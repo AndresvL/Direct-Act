@@ -5,12 +5,12 @@ public class Vraag {
 	private boolean rekenmachine;
 	private int nummer;
 	private String context;
-	private boolean afbeelding;
+	private String afbeelding;
 	private String vraagstelling;
 	private enum type{getal,verhouding, verband, meet}
 	type cat;
 	
-	public Vraag(boolean rek, int nr, String con, boolean af, String t, String vS, String a){
+	public Vraag(boolean rek, int nr, String con, String af, String t, String vS, String a){
 		this.setRekenmachine(rek);
 		this.setNummer(nr);
 		this.setContext(con);
@@ -65,11 +65,11 @@ public class Vraag {
 		this.context = context;
 	}
 
-	public boolean isAfbeelding() {
+	public String isAfbeelding() {
 		return afbeelding;
 	}
 
-	public void setAfbeelding(boolean afbeelding) {
+	public void setAfbeelding(String afbeelding) {
 		this.afbeelding = afbeelding;
 	}
 

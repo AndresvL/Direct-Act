@@ -15,7 +15,7 @@
 				<table style="text-align: left;">
 					<tr class="vraag+context">
 						<th id="context">${context}</th>
-						<th><img class="ilustratie" alt="" src="http://i.imgur.com/9hCvu.jpg"></img></th>
+						<th><img class="ilustratie" alt="ilustratie" src="data:image/gif;base64,${afbeelding}"></img></th>
 					</tr>
 					<tr id="vraagstelling">
 						<th>${vraag}</th>
