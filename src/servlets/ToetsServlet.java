@@ -1,6 +1,10 @@
 package servlets;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.sql.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,7 +35,10 @@ public class ToetsServlet extends HttpServlet{
 			Vraag huidig = new Vraag(nrs, (String)req.getSession().getAttribute("type"));
 			
 			int nr = huidig.getNummer();
+			int minuten = (Integer)req.getSession().getAttribute("minuten") - Calendar.MINUTE;
+			int seconds = (Integer)req.getSession().getAttribute("seconden") - Calendar.SECOND + (minuten * 60);
 			a.setNummer(nr);
+			a.setTijd(seconds);
 			a.setAntwoord((String)req.getParameter("antwoord"));
 			a.setCategorie(huidig.getType());
 			antw.verwerk(a);
@@ -47,10 +54,13 @@ public class ToetsServlet extends HttpServlet{
 				req.getSession().setAttribute("vraag", v.getVraagstelling());
 				req.getSession().setAttribute("plaatje", v.getAfbeelding());
 				req.getSession().setAttribute("rekenmachine", v.isRekenmachine());
+				req.getSession().setAttribute("minuten", Calendar.MINUTE);
+				req.getSession().setAttribute("seconden", Calendar.SECOND);
 				rd = req.getRequestDispatcher("/toets-vraag.jsp");
 			}else rd = req.getRequestDispatcher("/toets-eind.jsp");
 		}
 		rd.forward(req,resp);
 	}
+	
 	
 }

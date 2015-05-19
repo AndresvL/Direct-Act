@@ -1,6 +1,10 @@
 package servlets;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,6 +43,8 @@ public class LoginStudentServlet extends HttpServlet{
 				req.getSession().setAttribute("type", v.getType());
 				req.getSession().setAttribute("plaatje", v.getAfbeelding());
 				req.getSession().setAttribute("rekenmachine", v.isRekenmachine());
+				req.getSession().setAttribute("minuten", Calendar.MINUTE);
+				req.getSession().setAttribute("seconden", Calendar.SECOND);
 				if(s.isFirstTime())rd = req.getRequestDispatcher("/enquette.jsp");
 				else rd=req.getRequestDispatcher("/toets-vraag.jsp");
 								
