@@ -39,6 +39,10 @@ body {
 	margin-right: auto;
 	width: 50%;
 }
+th {
+	vertical-align: bottom;
+}
+
 label {
 	padding: 10px;
 	margin: 10px;
