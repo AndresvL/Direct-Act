@@ -37,10 +37,16 @@ public class ToetsServlet extends HttpServlet{
 			antw.verwerk(a);
 			if(vrg.isVolgendeVraag(nr + 1) != false){
 				Vraag v = vrg.volgendeVraag(nr + 1);
+				if(v.getAfbeelding() == null){
+					String blob = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuNWWFMmUAAAANSURBVBhXY/j//z8DAAj8Av6IXwbgAAAAAElFTkSuQmCC";
+					v.setAfbeelding(blob);
+				}
 				req.getSession().setAttribute("vraagnummer", v.getNummer());
 				req.getSession().setAttribute("context", v.getContext());
 				req.getSession().setAttribute("antwoord", "");
 				req.getSession().setAttribute("vraag", v.getVraagstelling());
+				req.getSession().setAttribute("plaatje", v.getAfbeelding());
+				req.getSession().setAttribute("rekenmachine", v.isRekenmachine());
 				rd = req.getRequestDispatcher("/toets-vraag.jsp");
 			}else rd = req.getRequestDispatcher("/toets-eind.jsp");
 		}

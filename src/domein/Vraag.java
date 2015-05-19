@@ -65,7 +65,7 @@ public class Vraag {
 		this.context = context;
 	}
 
-	public String isAfbeelding() {
+	public String getAfbeelding() {
 		return afbeelding;
 	}
 

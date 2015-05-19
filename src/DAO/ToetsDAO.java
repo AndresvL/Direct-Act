@@ -32,6 +32,7 @@ public Vraag getVraagByNr(int nr){
 	return v;
 }
 
+
 public void addAntwoord(Antwoord a) {
 	Connection conn = null;
 	try{
