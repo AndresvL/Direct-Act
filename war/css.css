@@ -30,6 +30,9 @@ body {
 	display: table;
 	width: 100%;
 }
+#ilustratie{
+	max-height: 200px;
+}
 .content{
 	margin-top: 15%;
 	margin-left: auto;
