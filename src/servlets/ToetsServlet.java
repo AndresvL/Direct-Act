@@ -27,7 +27,8 @@ public class ToetsServlet extends HttpServlet{
 		RequestDispatcher rd = null;
 		if(req.getParameter("button").equals("volgende")){
 			Antwoord a = new Antwoord();
-			Vraag huidig = new Vraag(Integer.parseInt((String) req.getSession().getAttribute("vraagnummer")), (String)req.getSession().getAttribute("type"));
+			int nrs = (Integer)req.getSession().getAttribute("vraagnummer");
+			Vraag huidig = new Vraag(nrs, (String)req.getSession().getAttribute("type"));
 			
 			int nr = huidig.getNummer();
 			a.setNummer(nr);
@@ -39,7 +40,7 @@ public class ToetsServlet extends HttpServlet{
 				req.getSession().setAttribute("vraagnummer", v.getNummer());
 				req.getSession().setAttribute("context", v.getContext());
 				req.getSession().setAttribute("antwoord", "");
-				req.getSession().setAttribute("vraag", v);
+				req.getSession().setAttribute("vraag", v.getVraagstelling());
 				rd = req.getRequestDispatcher("/toets-vraag.jsp");
 			}else rd = req.getRequestDispatcher("/toets-eind.jsp");
 		}

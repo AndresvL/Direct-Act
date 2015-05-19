@@ -3,7 +3,7 @@ package domein;
 public class Antwoord {
 	private int nummer;
 	private String antw;
-	private enum categorie{getallen,meetkunde,verhoudingen,verbanden}
+	private enum categorie{getal,meet,verhouding,verband}
 	categorie cat;
 	public Antwoord(){
 	}
@@ -35,7 +35,7 @@ public class Antwoord {
 	}
 	
 	public String getCategorie(){
-		return cat.name();
+		return cat.toString();
 	}
 
 }
