@@ -32,6 +32,7 @@ public class LoginStudentServlet extends HttpServlet{
 				req.getSession().setAttribute("vraag", v.getVraagstelling());
 				req.getSession().setAttribute("vraagnummer", v.getNummer());
 				req.getSession().setAttribute("context", v.getContext());
+				req.getSession().setAttribute("type", v.getType());
 				if(s.isFirstTime())rd = req.getRequestDispatcher("/enquette.jsp");
 				else rd=req.getRequestDispatcher("/toets-vraag.jsp");
 								

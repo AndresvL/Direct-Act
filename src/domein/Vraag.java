@@ -23,7 +23,12 @@ public class Vraag {
 	public Vraag() {
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	public Vraag(int nr, String cat){
+		this.setNummer(nr);
+		this.setType(cat);
+	}
+	
 	public void setType(String t){
 		for(type tt : type.values()){
 			if(tt.name().equals(t)){

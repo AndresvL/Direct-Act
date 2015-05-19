@@ -27,7 +27,7 @@ public class ToetsServlet extends HttpServlet{
 		RequestDispatcher rd = null;
 		if(req.getParameter("button").equals("volgende")){
 			Antwoord a = new Antwoord();
-			Vraag huidig = (Vraag) req.getSession().getAttribute("vraag");
+			Vraag huidig = new Vraag(Integer.parseInt((String) req.getSession().getAttribute("vraagnummer")), (String)req.getSession().getAttribute("type"));
 			
 			int nr = huidig.getNummer();
 			a.setNummer(nr);
