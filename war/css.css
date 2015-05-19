@@ -39,7 +39,7 @@ body {
 	margin-right: auto;
 	width: 50%;
 }
-th {
+.content th {
 	vertical-align: bottom;
 }
 
