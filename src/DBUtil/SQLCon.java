@@ -13,8 +13,8 @@ private static Connection conn = null;
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			conn = DriverManager.getConnection(url, username, passwd);
-			System.out.println("joepie gelukt");
-		} catch (Exception e) {
+			} 
+		catch (Exception e) {
 			System.out.print("niet gelukt");
 			e.printStackTrace();
 		}

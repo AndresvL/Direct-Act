@@ -1,10 +1,7 @@
 package servlets;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,10 +29,10 @@ public class LoginStudentServlet extends HttpServlet{
 		}
 		
 		RequestDispatcher rd = null;
-		String code = req.getParameter("code");
+		int code = Integer.parseInt(req.getParameter("code"));
 		if(req.getParameter("button").equals("login")){
 			if(controller.checkCode(code)){
-				controller.setStudent(s,code);
+				s = controller.setStudent(s,code);
 				req.getSession().setAttribute("student", s);
 				req.getSession().setAttribute("vraag", v.getVraagstelling());
 				req.getSession().setAttribute("vraagnummer", v.getNummer());
@@ -45,9 +42,9 @@ public class LoginStudentServlet extends HttpServlet{
 				req.getSession().setAttribute("rekenmachine", v.isRekenmachine());
 				req.getSession().setAttribute("minuten", Calendar.MINUTE);
 				req.getSession().setAttribute("seconden", Calendar.SECOND);
-				req.getSession().setAttribute("toetsnummer", vc.getVolgendToetsNummer());
-				if(s.isFirstTime())rd = req.getRequestDispatcher("/enquette.jsp");
-				else rd=req.getRequestDispatcher("/toets-vraag.jsp");
+			req.getSession().setAttribute("toetsnummer", vc.getVolgendToetsNummer(true,s.getCode()));
+				/*if(s.isFirstTime())rd = req.getRequestDispatcher("/enquete.jsp");
+				else */rd=req.getRequestDispatcher("/toets-vraag.jsp");
 								
 			}else{
 				req.setAttribute("msgs", "code bestaat niet");

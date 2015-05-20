@@ -54,6 +54,7 @@ public class ToetsServlet extends HttpServlet{
 				req.getSession().setAttribute("rekenmachine", v.isRekenmachine());
 				req.getSession().setAttribute("minuten", Calendar.MINUTE);
 				req.getSession().setAttribute("seconden", Calendar.SECOND);
+				System.out.println(req.getSession().getAttribute("toetsnummer"));
 				rd = req.getRequestDispatcher("/toets-vraag.jsp");
 			}else rd = req.getRequestDispatcher("/toets-eind.jsp");
 		}
