@@ -5,7 +5,7 @@ import java.sql.Date;
 public class Student{
 
 	private boolean firstTime;
-	private String code;
+	private int code;
 	private String school;
 	private String jaar;
 	private String niveau;
@@ -14,6 +14,8 @@ public class Student{
 	private Date isBlijvenZitten;
 
 	public boolean isFirstTime() {
+		if(this.school == null)firstTime = true;
+		else firstTime = false;
 		return firstTime;
 	}
 
@@ -21,11 +23,11 @@ public class Student{
 		this.firstTime = firstTime;
 	}
 
-	public String getCode() {
+	public int getCode() {
 		return code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 

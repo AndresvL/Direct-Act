@@ -25,7 +25,7 @@ public class VraagController {
 	public int getHuidigToetsNummer(){
 		return dao.getHuidigToetsNummer();
 	}
-	public int getVolgendToetsNummer(){
-		return dao.getVolgendToetsNummer();
+	public int getVolgendToetsNummer(boolean newToets, int stNr){
+		return dao.getVolgendToetsNummer(newToets, stNr);
 	}
 }

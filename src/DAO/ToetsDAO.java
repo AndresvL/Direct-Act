@@ -72,14 +72,22 @@ public int getHuidigToetsNummer(){
 	return 1;
 	else return toetsNummer;
 }
-public int getVolgendToetsNummer(){
+public int getVolgendToetsNummer(boolean newToets,int stNr){
 	Connection conn = null;
 	int toetsNummer = 0;
 	try{
 		conn = SQLCon.getConnection();
-		PreparedStatement pStmt = conn.prepareStatement("select MAX from toets");
+		PreparedStatement pStmt = conn.prepareStatement("select MAX(toetsNummer) from toets");
 		ResultSet rSet = pStmt.executeQuery();
-		toetsNummer = rSet.getInt("toetsNummer");
+		while(rSet.next()){
+		toetsNummer = rSet.getInt("MAX(toetsNummer)");
+		}
+		if(newToets){
+			PreparedStatement pStmt2 = conn.prepareStatement("insert into toets values(?,?)");
+			pStmt2.setInt(1, toetsNummer + 1);
+			pStmt2.setInt(2, stNr);
+			pStmt2.executeUpdate();
+		}
 	}
 	catch(SQLException e){
 		e.printStackTrace();

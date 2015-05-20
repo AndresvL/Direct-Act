@@ -19,7 +19,7 @@ public class StudentDAO {
 			conn = connection.getConnection();
 			PreparedStatement pStmt = conn
 					.prepareStatement("Insert into Student(studentcode, school,lesjaar,niveau,geslacht,gemwiskundeCijfer,wanneerBlijvenZitten)values(?,?,?,?,?,?,?,?)");
-			pStmt.setString(1, s.getCode());
+			pStmt.setInt(1, s.getCode());
 			pStmt.setString(2, s.getSchool());
 			pStmt.setString(3, s.getLesJaar());
 			pStmt.setString(4, s.getNiveau());
@@ -44,7 +44,7 @@ public class StudentDAO {
 			ResultSet rSet = pStmt.executeQuery();
 			while (rSet.next()) {
 				Student s = new Student();
-				s.setCode(rSet.getString("studencode"));
+				s.setCode(rSet.getInt("studencode"));
 				s.setSchool(rSet.getString("school"));
 				s.setJaar(rSet.getString("lesjaar"));
 				s.setNiveau(rSet.getString("niveau"));
@@ -74,7 +74,7 @@ public class StudentDAO {
 			ResultSet rSet = pStmt.executeQuery();
 			while (rSet.next()) {
 				Student s = new Student();
-				s.setCode(rSet.getString("studentcode"));
+				s.setCode(rSet.getInt("studentcode"));
 				s.setSchool(rSet.getString("school"));
 				s.setJaar(rSet.getString("lesjaar"));
 				s.setNiveau(rSet.getString("niveau"));
@@ -104,7 +104,7 @@ public class StudentDAO {
 			ResultSet rSet = pStmt.executeQuery();
 			while (rSet.next()) {
 				Student s = new Student();
-				s.setCode(rSet.getString("studentcode"));
+				s.setCode(rSet.getInt("studentcode"));
 				s.setSchool(rSet.getString("school"));
 				s.setJaar(rSet.getString("lesjaar"));
 				s.setNiveau(rSet.getString("niveau"));
@@ -134,7 +134,7 @@ public class StudentDAO {
 			ResultSet rSet = pStmt.executeQuery();
 			while (rSet.next()) {
 				Student s = new Student();
-				s.setCode(rSet.getString("studentcode"));
+				s.setCode(rSet.getInt("studentcode"));
 				s.setSchool(rSet.getString("school"));
 				s.setJaar(rSet.getString("lesjaar"));
 				s.setNiveau(rSet.getString("niveau"));
@@ -153,32 +153,30 @@ public class StudentDAO {
 
 	}
 
-	public Student getStudentByCode(String code) {
+	public Student getStudentByCode(int code) {
 		Connection conn = null;
 		Student s = new Student();
 		try {
 			conn = SQLCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("SELECT * FROM student WHERE studentcode=?");
-			pStmt.setInt(1, Integer.parseInt(code));
+			pStmt.setInt(1, code);
 			ResultSet rSet = pStmt.executeQuery();
-			if (rSet.next()) {
+			
 				while (rSet.next()) {
 					s.setCode(code);
-					System.out.println(rSet.getString("school"));
 					s.setSchool(rSet.getString("school"));
 					s.setJaar(rSet.getString("lesjaar"));
 					s.setNiveau(rSet.getString("niveau"));
 					s.setGeslacht(rSet.getString("geslacht"));
 					s.setIsBlijvenZitten(rSet.getDate("wanneerBlijvenZitten"));
 					s.setGemCijfer(rSet.getString("gemWiskundeCijfer"));
-				}
-			} else {
-				s = null;
-			}
+					break;
+					
+			} 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			GoogleCon.closeConnection(conn);
+			SQLCon.closeConnection(conn);
 		}
 		return s;
 

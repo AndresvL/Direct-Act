@@ -8,13 +8,13 @@ private static Connection conn = null;
 	public static Connection getConnection() {
 		String url = "jdbc:mysql://localhost/rekenen";
 		String username = "root";
-		String passwd = "";
+		String passwd = "admin";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			
 			conn = DriverManager.getConnection(url, username, passwd);
-			System.out.println("joepie gelukt");
-		} catch (Exception e) {
+			} 
+		catch (Exception e) {
 			System.out.print("niet gelukt");
 			e.printStackTrace();
 		}
