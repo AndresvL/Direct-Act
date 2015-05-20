@@ -13,9 +13,9 @@ public class ToetsDAO{
 public Vraag getVraagByNr(int nr){
 	 
 	Connection conn = null;
-	ResultSet rSet;
-	
+	ResultSet rSet;	
 	Vraag v = null;
+	
 	try{
 		conn = SQLCon.getConnection();
 		PreparedStatement pStmt = conn.prepareStatement("SELECT * FROM vraag WHERE vraagNummer = ?");
