@@ -88,6 +88,5 @@ public class Vraag {
 	public void setAntwoord(String antwoord) {
 		this.antwoord = antwoord;
 	}
-	
 }
 	

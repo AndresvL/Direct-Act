@@ -155,23 +155,22 @@ public class StudentDAO {
 
 	public Student getStudentByCode(int code) {
 		Connection conn = null;
-		Student s = new Student();
+		Student s = null;
 		try {
 			conn = SQLCon.getConnection();
 			PreparedStatement pStmt = conn.prepareStatement("SELECT * FROM student WHERE studentcode=?");
 			pStmt.setInt(1, code);
 			ResultSet rSet = pStmt.executeQuery();
-			
-				while (rSet.next()) {
-					s.setCode(code);
-					s.setSchool(rSet.getString("school"));
-					s.setJaar(rSet.getString("lesjaar"));
-					s.setNiveau(rSet.getString("niveau"));
-					s.setGeslacht(rSet.getString("geslacht"));
-					s.setIsBlijvenZitten(rSet.getDate("wanneerBlijvenZitten"));
-					s.setGemCijfer(rSet.getString("gemWiskundeCijfer"));
-					break;
-					
+			while (rSet.next()) {
+				s = new Student();
+				s.setCode(code);
+				s.setSchool(rSet.getString("school"));
+				s.setJaar(rSet.getString("lesjaar"));
+				s.setNiveau(rSet.getString("niveau"));
+				s.setGeslacht(rSet.getString("geslacht"));
+				s.setIsBlijvenZitten(rSet.getDate("wanneerBlijvenZitten"));
+				s.setGemCijfer(rSet.getString("gemWiskundeCijfer"));
+				break;					
 			} 
 		} catch (SQLException e) {
 			e.printStackTrace();

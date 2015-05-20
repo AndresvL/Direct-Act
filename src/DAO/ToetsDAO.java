@@ -37,11 +37,13 @@ public void addAntwoord(Antwoord a) {
 	Connection conn = null;
 	try{
 		conn = SQLCon.getConnection();
-		PreparedStatement pStmt = conn.prepareStatement("insert into antwoord values ?,?,?,?;");
+		PreparedStatement pStmt = conn.prepareStatement("insert into antwoord values (?,?,?,?,?,?);");
 		pStmt.setInt(1, a.getNummer());
 		pStmt.setString(2, a.getAntwoord());
-		pStmt.setString(3, a.getCategorie());
-		pStmt.setInt(4, a.getTijd());
+		pStmt.setInt(3, a.getTijd());
+		pStmt.setBoolean(4, a.getHeeftRekenmachineGebruikt());
+		pStmt.setInt(5, a.getToetsNummer());
+		pStmt.setInt(6,a.getVraagNummer());
 		pStmt.executeUpdate();
 	
 	}

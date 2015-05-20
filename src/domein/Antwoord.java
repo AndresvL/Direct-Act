@@ -5,15 +5,20 @@ public class Antwoord {
 	private String antw;
 	private int toetsNummer;
 	private int tijd;
+	private int vraagNummer;
 	private enum categorie{getal,meet,verhouding,verband}
 	categorie cat;
+	private boolean heeftRekenmachineGebruikt;
 	public Antwoord(){
 	}
-	public Antwoord(int nr,String antw,String cat, int t, int tN){
+	public Antwoord(int nr,String antw,String cat, int t, int tN, boolean hRG, int vN){
 		setNummer(nr);
 		setAntwoord(antw);
 		setCategorie(cat);
 		setTijd(t);
+		setToetsNummer(tN);
+		setHeeftRekenmachineGebruikt(hRG);
+		setVraagNummer(vN);
 		setToetsNummer(tN);
 	}
 	
@@ -54,5 +59,18 @@ public class Antwoord {
 	public void setToetsNummer(int toetsNummer) {
 		this.toetsNummer = toetsNummer;
 	}
+	public boolean getHeeftRekenmachineGebruikt(){
+		return heeftRekenmachineGebruikt;
+	}
+	public void setHeeftRekenmachineGebruikt(boolean heeftRekenmachineGebruikt){
+		this.heeftRekenmachineGebruikt = heeftRekenmachineGebruikt;
+	}
+	public int getVraagNummer(){
+		return vraagNummer;
+	}
+	public void setVraagNummer(int vraagNummer){
+		this.vraagNummer = vraagNummer;
+	}
+	
 
 }

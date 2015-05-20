@@ -39,6 +39,8 @@ public class ToetsServlet extends HttpServlet{
 			a.setAntwoord((String)req.getParameter("antwoord"));
 			a.setCategorie(huidig.getType());
 			a.setToetsNummer((Integer)req.getSession().getAttribute("toetsnummer"));
+			a.setVraagNummer(nr);
+			a.setHeeftRekenmachineGebruikt(false);
 			antw.verwerk(a);
 			if(vrg.isVolgendeVraag(nr + 1) != false){
 				Vraag v = vrg.volgendeVraag(nr + 1);
@@ -55,7 +57,7 @@ public class ToetsServlet extends HttpServlet{
 				req.getSession().setAttribute("minuten", Calendar.MINUTE);
 				req.getSession().setAttribute("seconden", Calendar.SECOND);
 				System.out.println(req.getSession().getAttribute("toetsnummer"));
-				rd = req.getRequestDispatcher("/toets-vraag.jsp");
+				
 			}else rd = req.getRequestDispatcher("/toets-eind.jsp");
 		}
 		rd.forward(req,resp);
