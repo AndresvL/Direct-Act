@@ -1,10 +1,7 @@
 package servlets;
 
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.sql.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -41,6 +38,7 @@ public class ToetsServlet extends HttpServlet{
 			a.setTijd(seconds);
 			a.setAntwoord((String)req.getParameter("antwoord"));
 			a.setCategorie(huidig.getType());
+			a.setToetsNummer((Integer)req.getSession().getAttribute("toetsnummer"));
 			antw.verwerk(a);
 			if(vrg.isVolgendeVraag(nr + 1) != false){
 				Vraag v = vrg.volgendeVraag(nr + 1);

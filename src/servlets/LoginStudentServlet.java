@@ -45,6 +45,7 @@ public class LoginStudentServlet extends HttpServlet{
 				req.getSession().setAttribute("rekenmachine", v.isRekenmachine());
 				req.getSession().setAttribute("minuten", Calendar.MINUTE);
 				req.getSession().setAttribute("seconden", Calendar.SECOND);
+				req.getSession().setAttribute("toetsnummer", vc.getVolgendToetsNummer());
 				if(s.isFirstTime())rd = req.getRequestDispatcher("/enquette.jsp");
 				else rd=req.getRequestDispatcher("/toets-vraag.jsp");
 								

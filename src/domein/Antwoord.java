@@ -3,16 +3,18 @@ package domein;
 public class Antwoord {
 	private int nummer;
 	private String antw;
+	private int toetsNummer;
 	private int tijd;
 	private enum categorie{getal,meet,verhouding,verband}
 	categorie cat;
 	public Antwoord(){
 	}
-	public Antwoord(int nr,String antw,String cat, int t){
+	public Antwoord(int nr,String antw,String cat, int t, int tN){
 		setNummer(nr);
 		setAntwoord(antw);
 		setCategorie(cat);
 		setTijd(t);
+		setToetsNummer(tN);
 	}
 	
 	public void setNummer(int nr) {
@@ -45,6 +47,12 @@ public class Antwoord {
 	}
 	public int getTijd(){
 		return tijd;
+	}
+	public int getToetsNummer() {
+		return toetsNummer;
+	}
+	public void setToetsNummer(int toetsNummer) {
+		this.toetsNummer = toetsNummer;
 	}
 
 }

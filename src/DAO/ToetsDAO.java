@@ -53,4 +53,42 @@ public void addAntwoord(Antwoord a) {
 	}
 	
 }
+public int getHuidigToetsNummer(){
+	Connection conn = null;
+	int toetsNummer = 0;
+	try{
+		conn = SQLCon.getConnection();
+		PreparedStatement pStmt = conn.prepareStatement("select MAX from toets");
+		ResultSet rSet = pStmt.executeQuery();
+		toetsNummer = rSet.getInt("toetsNummer");
+	}
+	catch(SQLException e){
+		e.printStackTrace();
+	}
+	finally{
+		GoogleCon.closeConnection(conn);
+	}
+	if(toetsNummer == 0)
+	return 1;
+	else return toetsNummer;
+}
+public int getVolgendToetsNummer(){
+	Connection conn = null;
+	int toetsNummer = 0;
+	try{
+		conn = SQLCon.getConnection();
+		PreparedStatement pStmt = conn.prepareStatement("select MAX from toets");
+		ResultSet rSet = pStmt.executeQuery();
+		toetsNummer = rSet.getInt("toetsNummer");
+	}
+	catch(SQLException e){
+		e.printStackTrace();
+	}
+	finally{
+		GoogleCon.closeConnection(conn);
+	}
+	if(toetsNummer == 0)
+	return 1;
+	else return toetsNummer + 1;
+}
 }
