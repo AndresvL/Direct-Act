@@ -22,7 +22,7 @@ public Vraag getVraagByNr(int nr){
 		pStmt.setInt(1,nr);
 		rSet = pStmt.executeQuery();
 		while(rSet.next()){
-			v = new Vraag(rSet.getBoolean("heeftRekenmachine"),rSet.getInt("vraagNummer"),rSet.getString("context"),rSet.getBoolean("afbeelding"), rSet.getString("categorie"), rSet.getString("opgave"));
+			v = new Vraag(rSet.getBoolean("heeftRekenmachine"),rSet.getInt("vraagNummer"),rSet.getString("context"),rSet.getString("afbeelding"), rSet.getString("categorie"), rSet.getString("opgave"), rSet.getString("antwoord1"));
 		}
 	}catch(SQLException e){
 		e.printStackTrace();
@@ -32,14 +32,16 @@ public Vraag getVraagByNr(int nr){
 	return v;
 }
 
+
 public void addAntwoord(Antwoord a) {
 	Connection conn = null;
 	try{
 		conn = SQLCon.getConnection();
-		PreparedStatement pStmt = conn.prepareStatement("insert into antwoord values ?,?,?;");
+		PreparedStatement pStmt = conn.prepareStatement("insert into antwoord values ?,?,?,?;");
 		pStmt.setInt(1, a.getNummer());
 		pStmt.setString(2, a.getAntwoord());
 		pStmt.setString(3, a.getCategorie());
+		pStmt.setInt(4, a.getTijd());
 		pStmt.executeUpdate();
 	
 	}
@@ -50,5 +52,43 @@ public void addAntwoord(Antwoord a) {
 		GoogleCon.closeConnection(conn);
 	}
 	
+}
+public int getHuidigToetsNummer(){
+	Connection conn = null;
+	int toetsNummer = 0;
+	try{
+		conn = SQLCon.getConnection();
+		PreparedStatement pStmt = conn.prepareStatement("select MAX from toets");
+		ResultSet rSet = pStmt.executeQuery();
+		toetsNummer = rSet.getInt("toetsNummer");
+	}
+	catch(SQLException e){
+		e.printStackTrace();
+	}
+	finally{
+		GoogleCon.closeConnection(conn);
+	}
+	if(toetsNummer == 0)
+	return 1;
+	else return toetsNummer;
+}
+public int getVolgendToetsNummer(){
+	Connection conn = null;
+	int toetsNummer = 0;
+	try{
+		conn = SQLCon.getConnection();
+		PreparedStatement pStmt = conn.prepareStatement("select MAX from toets");
+		ResultSet rSet = pStmt.executeQuery();
+		toetsNummer = rSet.getInt("toetsNummer");
+	}
+	catch(SQLException e){
+		e.printStackTrace();
+	}
+	finally{
+		GoogleCon.closeConnection(conn);
+	}
+	if(toetsNummer == 0)
+	return 1;
+	else return toetsNummer + 1;
 }
 }

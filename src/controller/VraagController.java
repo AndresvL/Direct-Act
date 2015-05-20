@@ -22,4 +22,10 @@ public class VraagController {
 		return v;
 	}
 
+	public int getHuidigToetsNummer(){
+		return dao.getHuidigToetsNummer();
+	}
+	public int getVolgendToetsNummer(){
+		return dao.getVolgendToetsNummer();
+	}
 }

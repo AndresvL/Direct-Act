@@ -15,14 +15,15 @@
 				<table style="text-align: left;">
 					<tr class="vraag+context">
 						<th id="context">${context}</th>
-						<th><img class="ilustratie" alt="" src="http://i.imgur.com/9hCvu.jpg"></img></th>
+						<th><img id="ilustratie" alt="ilustratie" src="data:image/gif;base64,${plaatje}"></img></th>
 					</tr>
+					<tr></tr>
 					<tr id="vraagstelling">
 						<th>${vraag}</th>
 					</tr>
 					<tr class="antwoord">
 						<form id="antwoord" action="toets-vraag.do" method="get">
-							<th><input type="text" name="antwoord" placeholder="Voer hier uw antwoord"></th>
+							<th><input type="text" required name="antwoord" placeholder="Voer hier uw antwoord in"></th>
 							<th><button type="submit" name="rekenmachine" value="toon">rekenmachine</button><button type="submit" name="button" value="volgende">volgende</button></th>
 						</form>
 					</tr>

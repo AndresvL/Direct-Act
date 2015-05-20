@@ -1,6 +1,10 @@
 package servlets;
 
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,6 +26,10 @@ public class LoginStudentServlet extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
 		Student s = new Student();
 		Vraag v = vc.eersteVraag();
+		if(v.getAfbeelding() == null){
+			String blob = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuNWWFMmUAAAANSURBVBhXY/j//z8DAAj8Av6IXwbgAAAAAElFTkSuQmCC";
+			v.setAfbeelding(blob);
+		}
 		
 		RequestDispatcher rd = null;
 		String code = req.getParameter("code");
@@ -32,6 +40,12 @@ public class LoginStudentServlet extends HttpServlet{
 				req.getSession().setAttribute("vraag", v.getVraagstelling());
 				req.getSession().setAttribute("vraagnummer", v.getNummer());
 				req.getSession().setAttribute("context", v.getContext());
+				req.getSession().setAttribute("type", v.getType());
+				req.getSession().setAttribute("plaatje", v.getAfbeelding());
+				req.getSession().setAttribute("rekenmachine", v.isRekenmachine());
+				req.getSession().setAttribute("minuten", Calendar.MINUTE);
+				req.getSession().setAttribute("seconden", Calendar.SECOND);
+				req.getSession().setAttribute("toetsnummer", vc.getVolgendToetsNummer());
 				if(s.isFirstTime())rd = req.getRequestDispatcher("/enquette.jsp");
 				else rd=req.getRequestDispatcher("/toets-vraag.jsp");
 								

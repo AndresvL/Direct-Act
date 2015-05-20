@@ -30,17 +30,19 @@ body {
 	display: table;
 	width: 100%;
 }
+#ilustratie{
+	max-height: 200px;
+}
 .content{
 	margin-top: 15%;
 	margin-left: auto;
 	margin-right: auto;
 	width: 50%;
 }
-.ilustratie {
-	position: relative;
-	margin-left: 70%;
-	height: 200px;
+.content th {
+	vertical-align: bottom;
 }
+
 label {
 	padding: 10px;
 	margin: 10px;
