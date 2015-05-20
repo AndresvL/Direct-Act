@@ -5,6 +5,7 @@ public class Antwoord {
 	private String antw;
 	private int toetsNummer;
 	private int tijd;
+	private boolean heeftRekenmachineGebruikt;
 	private enum categorie{getal,meet,verhouding,verband}
 	categorie cat;
 	public Antwoord(){
@@ -53,6 +54,11 @@ public class Antwoord {
 	}
 	public void setToetsNummer(int toetsNummer) {
 		this.toetsNummer = toetsNummer;
+	}
+	public boolean heeftRekenmachineGebruikt(boolean b) {
+		if(b) heeftRekenmachineGebruikt = true;
+		else heeftRekenmachineGebruikt = false;
+		return b;
 	}
 
 }
