@@ -6,9 +6,9 @@ public class SQLCon {
 private static Connection conn = null;
 	
 	public static Connection getConnection() {
-		String url = "jdbc:mysql://localhost/rekenen";
+		String url = "jdbc:mysql://localhost:8889/rekenen";
 		String username = "root";
-		String passwd = "";
+		String passwd = "root";
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			
