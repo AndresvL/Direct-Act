@@ -6,9 +6,9 @@ public class Antwoord {
 	private int toetsNummer;
 	private int tijd;
 	private int vraagNummer;
+	private boolean heeftRekenmachineGebruikt;
 	private enum categorie{getal,meet,verhouding,verband}
 	categorie cat;
-	private boolean heeftRekenmachineGebruikt;
 	public Antwoord(){
 	}
 	public Antwoord(int nr,String antw,String cat, int t, int tN, boolean hRG, int vN){
@@ -47,8 +47,7 @@ public class Antwoord {
 		return cat.toString();
 	}
 	public void setTijd(int seconden) {
-		this.tijd = seconden;
-		
+		this.tijd = seconden;		
 	}
 	public int getTijd(){
 		return tijd;
@@ -58,7 +57,7 @@ public class Antwoord {
 	}
 	public void setToetsNummer(int toetsNummer) {
 		this.toetsNummer = toetsNummer;
-	}
+	}	
 	public boolean getHeeftRekenmachineGebruikt(){
 		return heeftRekenmachineGebruikt;
 	}
@@ -71,6 +70,4 @@ public class Antwoord {
 	public void setVraagNummer(int vraagNummer){
 		this.vraagNummer = vraagNummer;
 	}
-	
-
 }
