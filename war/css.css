@@ -13,6 +13,24 @@ body {
 	position: absolute;
 	padding-top: 5%;
 }
+#context{
+	overflow: auto;
+	height: 200px;
+}
+#border{
+	border: 1px solid #49DCDC;
+}
+.opties{
+	position: absolute;
+	margin-top: 150px;
+	margin-left: 10%;
+	margin-right: auto;
+	text-align: left;
+}
+#opties th{
+	text-align: left;
+	width: 60px;
+}
 .header{
 	position: fixed;
 	left: 0px;
@@ -41,6 +59,13 @@ body {
 }
 .content th {
 	vertical-align: bottom;
+}
+
+.vragen{
+	margin-top: 150px;
+	margin-left: 40%;
+	margin-right: auto;
+	width: 50%;
 }
 
 label {
