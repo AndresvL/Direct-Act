@@ -1,10 +1,6 @@
 package servlets;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import controller.VraagController;
 import controller.StudentController;
+import controller.TijdController;
 import domein.Student;
 import domein.Vraag;
 
@@ -21,7 +18,7 @@ public class LoginStudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 194503685680L;
 	private StudentController controller = new StudentController();
 	private VraagController vc = new VraagController();
-	private Calendar cal = Calendar.getInstance();
+	private TijdController tijd = new TijdController();
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -44,11 +41,9 @@ public class LoginStudentServlet extends HttpServlet {
 				req.getSession().setAttribute("type", v.getType());
 				req.getSession().setAttribute("plaatje", v.getAfbeelding());
 				req.getSession().setAttribute("rekenmachine",v.isRekenmachine());
-				req.getSession().setAttribute("tijd",getUur(System.currentTimeMillis()));
-				System.out.println("getToday(long timemilles) "+ getUur(System.currentTimeMillis()));
-				req.getSession().setAttribute("uren",getUur(System.currentTimeMillis()));
-				req.getSession().setAttribute("minuten",getMinuut(System.currentTimeMillis()));
-				req.getSession().setAttribute("seconden",getSeconde(System.currentTimeMillis()));
+				req.getSession().setAttribute("uren",tijd.getUur(System.currentTimeMillis()));
+				req.getSession().setAttribute("minuten",tijd.getMinuut(System.currentTimeMillis()));
+				req.getSession().setAttribute("seconden",tijd.getSeconde(System.currentTimeMillis()));
 				req.getSession().setAttribute("toetsnummer",vc.getVolgendToetsNummer(true, s.getCode()));
 				if (s.isFirstTime()) {
 					rd = req.getRequestDispatcher("/enquete.jsp");
@@ -62,29 +57,5 @@ public class LoginStudentServlet extends HttpServlet {
 		}
 		rd.forward(req, resp);
 
-	}
-
-	public int getUur(long millisecs) {
-		cal = Calendar.getInstance();
-		SimpleDateFormat uur = new SimpleDateFormat("HH");
-		Date resultdate = new Date(millisecs);
-		int HH = Integer.parseInt(uur.format(resultdate));
-		return HH;
-	}
-
-	public int getMinuut(long millisecs) {
-		cal = Calendar.getInstance();
-		SimpleDateFormat minuut = new SimpleDateFormat("mm");
-		Date resultdate = new Date(millisecs);
-		int mm = Integer.parseInt(minuut.format(resultdate));
-		return mm;
-	}
-
-	public int getSeconde(long millisecs) {
-		cal = Calendar.getInstance();
-		SimpleDateFormat seconde = new SimpleDateFormat("ss");
-		Date resultdate = new Date(millisecs);
-		int ss = Integer.parseInt(seconde.format(resultdate));
-		return ss;
 	}
 }
