@@ -16,7 +16,7 @@ public class GoogleCon {
 	}
 	public Connection getConnection() {
 		connect();
-		String url = "jdbc:mysql://localhost:8889/Rekentoets";
+		String url = "jdbc:mysql://localhost:8889/rekenen";
 		String username = "root";
 		String passwd = "root";
 		try {

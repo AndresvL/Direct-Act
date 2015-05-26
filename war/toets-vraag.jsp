@@ -23,8 +23,9 @@
 					</tr>
 					<tr class="antwoord">
 						<form id="antwoord" action="toets-vraag.do" method="get">
-							<th><input type="text" required name="antwoord" placeholder="Voer hier uw antwoord in"></th>
-							<th><button type="submit" name="rekenmachine" value="toon">rekenmachine</button><button type="submit" name="button" value="volgende">volgende</button></th>
+							<input type="text" required name="antwoord" class = "input" placeholder="Voer hier uw antwoord in">
+							<button type="submit" name="rekenmachine" class = "button" value="toon">rekenmachine</button>
+							<button type="submit" name="button" class = "button value="volgende">volgende</button>
 						</form>
 					</tr>
 				</table>

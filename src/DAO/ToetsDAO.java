@@ -12,7 +12,6 @@ import domein.Vraag;
 public class ToetsDAO {
 
 	public Vraag getVraagByNr(int nr) {
-
 		Connection conn = null;
 		ResultSet rSet;
 		Vraag v = null;

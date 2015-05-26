@@ -31,9 +31,10 @@ public class LoginStudentServlet extends HttpServlet {
 
 		RequestDispatcher rd = null;
 		int code = Integer.parseInt(req.getParameter("code"));
+		boolean done = true;
 		if (req.getParameter("button").equals("login")) {
-			if (controller.checkCode(code)) {
-				s = controller.setStudent(s, code);
+			if (controller.checkCode(code, done)) {
+				s = controller.setStudent(s, code, done);
 				req.getSession().setAttribute("student", s);
 				req.getSession().setAttribute("vraag", v.getVraagstelling());
 				req.getSession().setAttribute("vraagnummer", v.getNummer());

@@ -61,12 +61,21 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>enquette servlet</servlet-name>
-		<servlet-class>servlets.EnquetteServlet</servlet-class>
+		<servlet-name>enquete servlet</servlet-name>
+		<servlet-class>servlets.EnqueteServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>enquette servlet</servlet-name>
+		<servlet-name>enquete servlet</servlet-name>
 		<url-pattern>/enquete.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>studentcodes genereren</servlet-name>
+		<servlet-class>servlets.StudentcodeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>studentcodes genereren</servlet-name>
+		<url-pattern>/studentcode.do</url-pattern>
 	</servlet-mapping>
 	
 
