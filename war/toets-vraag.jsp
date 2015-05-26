@@ -12,6 +12,7 @@
 			</div>
 			<div class="content">
 				<h2>Vraag ${vraagnummer}</h2>
+				<form id="antwoord" action="toets-vraag.do" method="get">
 				<table style="text-align: left;">
 					<tr class="vraag+context">
 						<th id="context">${context}</th>
@@ -20,15 +21,14 @@
 					<tr></tr>
 					<tr id="vraagstelling">
 						<th>${vraag}</th>
-					</tr>
-					<tr class="antwoord">
-						<form id="antwoord" action="toets-vraag.do" method="get">
-							<input type="text" required name="antwoord" class = "input" placeholder="Voer hier uw antwoord in">
-							<button type="submit" name="rekenmachine" class = "button" value="toon">rekenmachine</button>
-							<button type="submit" name="button" class = "button value="volgende">volgende</button>
-						</form>
+					</tr><br />
+					<tr class="antwoord">						
+						<th><input type="text" required name="antwoord" placeholder="Voer hier uw antwoord in"></th>
+						<th><button type="submit" name="rekenmachine" value="toon">rekenmachine</button>
+						<button type="submit" name="button" value="volgende">volgende</button></th>
 					</tr>
 				</table>
+				</form>
 			</div>
 			<div class="footer">
 				<center><h6>© Direct-ACT & Justian Knobbout</h6></center>

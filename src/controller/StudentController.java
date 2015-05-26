@@ -19,4 +19,13 @@ public class StudentController {
 		
 	}
 
+	public boolean createStudent(Student s) {
+		if(dao.createStudent(s)){
+			return true;
+		}else{
+			return false;
+		}
+		
+	}
+
 }

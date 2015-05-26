@@ -1,10 +1,12 @@
 package DAO;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Connection;
 import java.util.ArrayList;
+
 import DBUtil.SQLCon;
 import domein.Student;
 
@@ -26,25 +28,27 @@ public class StudentDAO {
 		}
 	}
 
-	public void createStudent(Student s) {
+	public boolean createStudent(Student s) {
 		Connection conn = null;
 		try {
 			conn = SQLCon.getConnection();
 			PreparedStatement pStmt = conn
-					.prepareStatement("insert into student(studentcode,school,lesjaar,niveau,geslacht,gemwiskundeCijfer,wanneerBlijvenZitten)values(?,?,?,?,?,?,?,?)");
-			pStmt.setInt(1, s.getCode());
-			pStmt.setString(2, s.getSchool());
-			pStmt.setString(3, s.getLesJaar());
+					.prepareStatement("update student set school=?,lesjaar=?,profiel=?,niveau=?,geslacht=?,gemWiskundeCijfer=?,wanneerBlijvenZitten=? where studentcode = ?");
+			pStmt.setString(1, s.getSchool());
+			pStmt.setInt(2, s.getJaar());
+			pStmt.setString(3, s.getProfiel());
 			pStmt.setString(4, s.getNiveau());
-			pStmt.setString(6, s.getGeslacht());
-			pStmt.setString(7, s.getGemCijfer());
-			pStmt.setDate(8, s.getIsBlijvenZitten());
+			pStmt.setString(5, s.getGeslacht());
+			pStmt.setDouble(6, s.getGemCijfer());
+			pStmt.setString(7, s.getIsBlijvenZitten());
+			pStmt.setInt(8, s.getCode());
 			pStmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			SQLCon.closeConnection(conn);
 		}
+		return true;
 	}
 
 	public ArrayList<Student> getStudenten() {
@@ -59,11 +63,12 @@ public class StudentDAO {
 				Student s = new Student();
 				s.setCode(rSet.getInt("studencode"));
 				s.setSchool(rSet.getString("school"));
-				s.setJaar(rSet.getString("lesjaar"));
+				s.setJaar(rSet.getInt("lesjaar"));
+				s.setProfiel(rSet.getString("profiel"));
 				s.setNiveau(rSet.getString("niveau"));
 				s.setGeslacht(rSet.getString("geslacht"));
-				s.setGemCijfer(rSet.getString("gemCijfer"));
-				s.setIsBlijvenZitten(rSet.getDate("isBlijvenZitten"));
+				s.setGemCijfer(rSet.getDouble("gemCijfer"));
+				s.setIsBlijvenZitten(rSet.getString("isBlijvenZitten"));
 				Studenten.add(s);
 			}
 			pStmt.executeUpdate();
@@ -89,11 +94,11 @@ public class StudentDAO {
 				Student s = new Student();
 				s.setCode(rSet.getInt("studentcode"));
 				s.setSchool(rSet.getString("school"));
-				s.setJaar(rSet.getString("lesjaar"));
+				s.setJaar(rSet.getInt("lesjaar"));
 				s.setNiveau(rSet.getString("niveau"));
 				s.setGeslacht(rSet.getString("geslacht"));
-				s.setGemCijfer(rSet.getString("gemCijfer"));
-				s.setIsBlijvenZitten(rSet.getDate("isBlijvenZitten"));
+				s.setGemCijfer(rSet.getDouble("gemCijfer"));
+				s.setIsBlijvenZitten(rSet.getString("isBlijvenZitten"));
 				Studenten.add(s);
 			}
 			pStmt.executeUpdate();
@@ -119,11 +124,11 @@ public class StudentDAO {
 				Student s = new Student();
 				s.setCode(rSet.getInt("studentcode"));
 				s.setSchool(rSet.getString("school"));
-				s.setJaar(rSet.getString("lesjaar"));
+				s.setJaar(rSet.getInt("lesjaar"));
 				s.setNiveau(rSet.getString("niveau"));
 				s.setGeslacht(rSet.getString("geslacht"));
-				s.setGemCijfer(rSet.getString("gemCijfer"));
-				s.setIsBlijvenZitten(rSet.getDate("isBlijvenZitten"));
+				s.setGemCijfer(rSet.getDouble("gemCijfer"));
+				s.setIsBlijvenZitten(rSet.getString("isBlijvenZitten"));
 				Studenten.add(s);
 			}
 			pStmt.executeUpdate();
@@ -149,11 +154,11 @@ public class StudentDAO {
 				Student s = new Student();
 				s.setCode(rSet.getInt("studentcode"));
 				s.setSchool(rSet.getString("school"));
-				s.setJaar(rSet.getString("lesjaar"));
+				s.setJaar(rSet.getInt("lesjaar"));
 				s.setNiveau(rSet.getString("niveau"));
 				s.setGeslacht(rSet.getString("geslacht"));
-				s.setGemCijfer(rSet.getString("gemCijfer"));
-				s.setIsBlijvenZitten(rSet.getDate("isBlijvenZitten"));
+				s.setGemCijfer(rSet.getDouble("gemCijfer"));
+				s.setIsBlijvenZitten(rSet.getString("isBlijvenZitten"));
 				Studenten.add(s);
 			}
 			pStmt.executeUpdate();
@@ -179,11 +184,11 @@ public class StudentDAO {
 				s = new Student();
 				s.setCode(code);
 				s.setSchool(rSet.getString("school"));
-				s.setJaar(rSet.getString("lesjaar"));
+				s.setJaar(rSet.getInt("lesjaar"));
 				s.setNiveau(rSet.getString("niveau"));
 				s.setGeslacht(rSet.getString("geslacht"));
-				s.setIsBlijvenZitten(rSet.getDate("wanneerBlijvenZitten"));
-				s.setGemCijfer(rSet.getString("gemWiskundeCijfer"));
+				s.setIsBlijvenZitten(rSet.getString("wanneerBlijvenZitten"));
+				s.setGemCijfer(rSet.getDouble("gemWiskundeCijfer"));
 				break;
 			}
 		} catch (SQLException e) {

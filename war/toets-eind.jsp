@@ -11,10 +11,10 @@
 				<img alt="" src="images/logo.png" style="margin: 10px;"></img>
 			</div>
 			<div class="content">
-				<h2>Toets beëindigd, bla bla bla</h2>
+				<h2>Toets beeindigd, bla bla bla</h2>
 				<div class="eindig">
 					<form id="eindig">
-						<button type="submit" name="button" value="eindig">beëindigen</button>
+						<button type="submit" name="button" value="eindig">beeindigen</button>
 					</form>
 				</div>
 			</div>

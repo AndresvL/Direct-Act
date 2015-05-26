@@ -2,16 +2,18 @@ package domein;
 
 import java.sql.Date;
 
+
 public class Student{
 
 	private boolean firstTime;
 	private int code;
 	private String school;
-	private String jaar;
+	private int jaar;
 	private String niveau;
 	private String geslacht;
-	private String cijfer;
-	private Date isBlijvenZitten;
+	private double cijfer;
+	private String isBlijvenZitten;
+	private String profiel;
 
 	public boolean isFirstTime() {
 		if(this.school == null)firstTime = true;
@@ -39,11 +41,11 @@ public class Student{
 		this.school = school;
 	}
 
-	public String getJaar() {
+	public int getJaar() {
 		return jaar;
 	}
 
-	public void setJaar(String jaar) {
+	public void setJaar(int jaar) {
 		this.jaar = jaar;
 	}
 
@@ -63,28 +65,26 @@ public class Student{
 		this.geslacht = geslacht;
 	}
 
-	public String getGemCijfer() {
+	public double getGemCijfer() {
 		return cijfer;
 	}
 
-	public void setGemCijfer(String cijfer) {
+	public void setGemCijfer(double cijfer) {
 		this.cijfer = cijfer;
 	}
 
-	public Date getIsBlijvenZitten() {
+	public String getIsBlijvenZitten() {
 		return isBlijvenZitten;
 	}
 
-	public void setIsBlijvenZitten(Date isBlijvenZitten) {
-		this.isBlijvenZitten = isBlijvenZitten;
+	public void setIsBlijvenZitten(String blijvenZitten) {
+		this.isBlijvenZitten = blijvenZitten;
 	}
 
-	public String getLesJaar() {
-		// TODO Auto-generated method stub
-		return null;
+	public String getProfiel() {
+		return profiel;
 	}
-	
-
-
-
+	public void setProfiel(String prof) {
+		this.profiel = prof;
+	}
 }

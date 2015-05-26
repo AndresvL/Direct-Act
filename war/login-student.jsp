@@ -43,8 +43,8 @@
 				<br />
 				<h2>Log hier in als Student</h2>
 				<form id="studentInlog" action="login-student.do" method="get">
-					<input type="number" name="code" class = "input" placeholder="Voer hier uw code in" required autofocus="on" alt ="Vul hier de code in die je hebt gekregen van je docent">
-					<button type="submit" name="button" class ="button" value="login">login</button>
+					<input type="number" name="code" placeholder="Voer hier uw code in" required autofocus="on" alt ="Vul hier de code in die je hebt gekregen van je docent">
+					<button type="submit" name="button" value="login">login</button>
 				</form>
 			</div>
 			<div class="footer">

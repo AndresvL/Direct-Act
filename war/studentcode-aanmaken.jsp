@@ -11,11 +11,11 @@
 			<img alt="" src="images/logo.png" style="margin: 10px;"></img>
 		</div>
 		<div class="content">
-			<h1 align="center">Studentcodes generen</h1>
+			<h2>Studentcodes generen</h2>
 			<br /> <label>Vul hieronder het aantal studenten in</label>
 			<form action="studentcode.do">
-				<input type="number" class = "input" name="aantal" required autofocus="on">
-				<button class = "button"  type="submit" name="button" value="code">Genereer	Codes</button>
+				<input type="number"  name="aantal" required autofocus="on">
+				<button  type="submit" name="button" value="code">Genereer	Codes</button>
 			</form>
 		</div>
 		<div id = codelijst>

@@ -1,53 +1,49 @@
 body {
 	font-family: Verdana, Serif;
 }
-#table{
+
+#table {
 	display: table;
-	text-align : left;
+	text-align: left;
 }
+
 #links {
 	top: 100px;
 	right: 100px;
 	position: fixed;
 }
-.links{
-    position: absolute;
-}
-.links label{
-    float: left;
-    width: 150px;
-    padding: 7px;
-    
-}
-.links input{
-	padding: 8px;
-	margin: 5px;
-}
+
 #links a {
 	padding: 0px 20px;
 }
+
 .antwoord {
 	position: absolute;
 	padding-top: 5%;
 }
-#context{
+
+#context {
 	height: 200px;
 }
-#border{
+
+#border {
 	border: 1px solid #49DCDC;
 }
-.opties{
+
+.opties {
 	position: absolute;
 	margin-top: 150px;
 	margin-left: 10%;
 	margin-right: auto;
 	text-align: left;
 }
-#opties th{
+
+#opties th {
 	text-align: left;
 	width: 60px;
 }
-.header{
+
+.header {
 	position: fixed;
 	left: 0px;
 	top: 0px;
@@ -56,44 +52,72 @@ body {
 	display: table;
 	padding-top: 0px;
 }
-.footer{
-	position:fixed;
+
+.footer {
+	position: fixed;
 	left: 0px;
-	bottom:0px;
+	bottom: 0px;
 	border-top: solid #49DCDC;
 	display: table;
 	width: 100%;
 }
-#ilustratie{
+
+#ilustratie {
 	max-height: 200px;
 }
-.content{
+.vragen {
+	position: absolute;
+	margin-top: 20%;
+	margin-left: 30%;
+	margin-right: auto;
+}
+
+.vragen label {
+	padding: 10px;
+	width: 200px;
+	float: left;
+}
+
+.vragen input{
+	padding: 5px;
+	margin: 10px;
+}
+.vragen select{
+	padding: 10px;
+	margin: 15px;
+	width: 100px;
+}
+.vragen .button{
+	padding: 5px;
+	margin: 10px;
+}
+#codelijst{
+	position: absolute;
+	margin-top: 5%;
+	margin-left: 28%;
+	margin-right: auto;
+}
+.content {
 	margin-top: 15%;
 	margin-left: auto;
 	margin-right: auto;
-	width: 50%;
+	width: 100%;
 }
 .content th {
 	vertical-align: bottom;
 }
-
-.vragen{
-	margin-top: 150px;
-	margin-left: 40%;
-	margin-right: auto;
-	width: 50%;
-}
-.label {
+.content label {
 	padding: 10px;
 	margin: 10px;
 }
-.input {
+
+.content input {
 	padding: 10px;
 	margin: 10px;
 	width: 400px;
 }
 
-.button {
+.content button {
 	padding: 5px;
 	margin: 10px;
 }
