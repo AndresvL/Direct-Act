@@ -26,9 +26,7 @@
 			out.println(); 		
 		}	%></div>
 		<div class="footer">
-			<center>
 				<h6>© Direct-ACT & Justian Knobbout</h6>
-			</center>
 		</div>
 	</div>
 </body>

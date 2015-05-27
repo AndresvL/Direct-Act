@@ -1,6 +1,5 @@
 package DAO;
 
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,14 +11,15 @@ import domein.Student;
 
 public class StudentDAO {
 
-	public void setStudentCode(Student s) {
+	public void setStudentCode(Student s, String email) {
 		Connection conn = null;
 		try {
 			conn = SQLCon.getConnection();
 			System.out.println("studentcode " + s.getCode());
 			PreparedStatement pStmt = conn
-					.prepareStatement("insert into student(studentcode)values(?)");
+					.prepareStatement("insert into student(studentcode,docent_email)values(?,?)");
 			pStmt.setInt(1, s.getCode());
+			pStmt.setString(2, email);
 			pStmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

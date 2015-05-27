@@ -1,5 +1,6 @@
 package controller;
 import DAO.StudentDAO;
+import domein.Docent;
 import domein.Student;
 
 public class StudentController {
@@ -14,8 +15,8 @@ public class StudentController {
 		return s;		
 	}
 
-	public void setStudentCode(Student s) {
-		dao.setStudentCode(s);
+	public void setStudentCode(Student s, String em) {
+		dao.setStudentCode(s, em);
 		
 	}
 

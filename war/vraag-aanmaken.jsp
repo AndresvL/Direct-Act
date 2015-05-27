@@ -80,9 +80,7 @@
 			</table>
 		</div>
 		<div class="footer">
-			<center>
-				<h6>© Direct-ACT & Justian Knobbout</h6>
-			</center>
+			<h6>© Direct-ACT & Justian Knobbout</h6>
 		</div>
 	</div>
 </body>

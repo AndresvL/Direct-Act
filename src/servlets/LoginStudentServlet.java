@@ -28,7 +28,6 @@ public class LoginStudentServlet extends HttpServlet {
 			String blob = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuNWWFMmUAAAANSURBVBhXY/j//z8DAAj8Av6IXwbgAAAAAElFTkSuQmCC";
 			v.setAfbeelding(blob);
 		}
-
 		RequestDispatcher rd = null;
 		int code = Integer.parseInt(req.getParameter("code"));
 		boolean done = true;
